@@ -130,6 +130,10 @@
             overflow: hidden;
             border-radius: 6px;
             height: 240px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .gallery-card img {
             width: 100%;
@@ -146,6 +150,7 @@
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
             padding: 15px;
             color: #ffffff;
+            z-index: 2;
         }
 
         /* 5. SPLIT FLEX SYSTEM (REAL ESTATE & CONTACT) */
@@ -157,6 +162,7 @@
         }
         .split-col {
             flex: 1 1 450px;
+            min-width: 300px;
         }
         .img-fluid {
             width: 100%;
@@ -172,6 +178,7 @@
             text-decoration: none;
             margin-top: 15px;
             font-weight: 600;
+            border-radius: 4px;
         }
 
         /* 6. CONTACT FORMS */
@@ -227,7 +234,7 @@
     <header class="nav-header">
         <div class="container nav-container">
             <a href="index.html">
-                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo">
+                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<strong style=\"color:#212529; font-size:1.25rem;\">Berkshire Group</strong>';">
             </a>
             <ul class="nav-menu">
                 <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
@@ -257,34 +264,15 @@
             
             <div class="ex-gallery-grid">
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-1.jpg" alt="Dealership Showroom">
+                    <img src="images/hero-gallery-1.jpg" alt="Dealership Showroom" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Showrooms</div>');">
                     <div class="card-overlay"><h5>Showrooms</h5></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-2.jpg" alt="Service Bay">
+                    <img src="images/hero-gallery-2.jpg" alt="Service Bay" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Service Centers</div>');">
                     <div class="card-overlay"><h5>Service Centers</h5></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-3.jpg" alt="Fleet Fleet">
+                    <img src="images/hero-gallery-3.jpg" alt="Fleet Logistics" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Fleet Logistics</div>');">
                     <div class="card-overlay"><h5>Fleet Logistics</h5></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-4.jpg" alt="Luxury Inventory">
-                    <div class="card-overlay"><h5>Premium Vehicles</h5></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REAL ESTATE PORTFOLIO -->
-    <section id="real-estate" class="py-5">
-        <div class="container">
-            <div class="split-layout">
-                <div class="split-col">
-                    <h2>Real Estate Operations</h2>
-                    <div class="title-line" style="margin-left: 0;"></div>
-                    <p style="font-size: 1.1rem; margin-bottom: 10px;">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
-                    <p class="text-muted">From tailored administrative offices to premium lofts, our strategic structural investments focus on long-term capital stability and unparalleled asset reliability.</p>
-                    <a href="#contact" class="btn-dark">View Properties</a>
-                </div>
-                <div class="split-col">
