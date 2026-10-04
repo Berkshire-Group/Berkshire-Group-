@@ -1,99 +1,124 @@
-@import url("https://googleapis.com");
+/* ==========================================================================
+   BERKSHIRE GROUP - GLOBAL CUSTOM STYLES
+   ========================================================================== */
 
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #ffffff;
-  color: #212529;
-}
-
-/* Structural Components */
+/* 1. HEADER LOGO & NAVIGATION */
 .main-logo {
-  max-height: 45px;
-  width: auto;
+    height: 65px !important; /* Makes the logo visibly larger and premium */
+    width: auto;
+    object-fit: contain;
 }
 
-.title-line {
-  width: 60px;
-  height: 3px;
-  background-color: #212529;
-  border-radius: 2px;
+/* Forces menu links into a straight horizontal line on ALL screens */
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin-left: auto;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    gap: 1.5rem !important; /* Even spacing between links */
 }
 
-/* Custom Hero Layout block styling */
+.navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+}
+
+/* Hides the mobile menu icon since links stay horizontal */
+.navbar-toggler {
+    display: none !important; 
+}
+
+.nav-link {
+    color: #212529 !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000000 !important;
+}
+
+/* 2. HERO SECTION */
 .hero-section {
-  min-height: 65vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('../images/hero-properties.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("hero-gallery-1.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
-/* High Performance Expanding Interactive Gallery Alternative */
+/* Decorative structural underlines */
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #212529;
+    margin-top: 0.5rem;
+}
+
+.title-line.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* 3. AUTOMOTIVE EXPANDING GRID */
 .ex-gallery-grid {
-  display: flex;
-  gap: 12px;
-  min-height: 450px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 15px 0;
 }
 
 .gallery-card {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.gallery-card:hover {
-  flex: 2.5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 250px;
 }
 
 .gallery-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
-  filter: brightness(80%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .gallery-card:hover img {
-  transform: scale(1.05);
-  filter: brightness(100%);
+    transform: scale(1.05);
 }
 
 .card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    color: #ffffff;
 }
 
-/* Real estate scaling interactions */
+.card-overlay h5 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* 4. REAL ESTATE HOVER STYLES */
 .hover-zoom {
-  transition: transform 0.5s ease;
-}
-.image-wrapper:hover .hover-zoom {
-  transform: scale(1.04);
+    transition: transform 0.3s ease;
 }
 
-/* Contact handler specific controls */
-.form-control:focus, .form-select:focus {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: #fff !important;
-  border-color: #fff !important;
-  box-shadow: none !important;
+.hover-zoom:hover {
+    transform: scale(1.03);
 }
 
-option {
-  background-color: #212529;
-  color: #fff;
-}
-
-/* Media optimization controls */
-@media (max-width: 991px) {
-  .ex-gallery-grid {
-    flex-direction: column;
-    min-height: auto;
-    height: 600px;
-  }
+/* 5. FOOTER DISPLAY SETUP */
+footer {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #000000 !important;
+    color: #6c757d !important;
+    padding: 2rem 0 !important;
 }
