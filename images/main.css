@@ -1,57 +1,37 @@
 /* ==========================================================================
-   BERKSHIRE GROUP - GLOBAL CUSTOM STYLES
+   BERKSHIRE GROUP - CLEAN STRUCTURAL STYLES
    ========================================================================== */
 
-/* 1. HEADER LOGO & NAVIGATION */
+/* 1. BRANDING & NAVIGATION */
 .main-logo {
-    height: 65px !important; /* Makes the logo visibly larger and premium */
+    height: 45px !important; /* Fixed premium size so it does not distort layout */
     width: auto;
     object-fit: contain;
 }
 
-/* Forces menu links into a straight horizontal line on ALL screens */
-.navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    margin-left: auto;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    gap: 1.5rem !important; /* Even spacing between links */
-}
-
-.navbar-collapse {
-    display: flex !important;
-    flex-basis: auto !important;
-}
-
-/* Hides the mobile menu icon since links stay horizontal */
-.navbar-toggler {
-    display: none !important; 
-}
-
+/* Smooth color transitions for header links */
 .nav-link {
-    color: #212529 !important;
-    transition: color 0.2s ease-in-out;
+    color: #495057 !important;
+    transition: color 0.2s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover, 
+.nav-link.active {
     color: #000000 !important;
 }
 
 /* 2. HERO SECTION */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("hero-gallery-1.jpg") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("hero-gallery-1.jpg") no-repeat center center;
     background-size: cover;
-    min-height: 70vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
 }
 
-/* Decorative structural underlines */
+/* Decorative visual lines */
 .title-line {
-    width: 60px;
+    width: 50px;
     height: 3px;
     background-color: #212529;
     margin-top: 0.5rem;
@@ -61,20 +41,18 @@
     background-color: #f8f9fa !important;
 }
 
-/* 3. AUTOMOTIVE EXPANDING GRID */
+/* 3. AUTOMOTIVE GRID LOGIC */
 .ex-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
-    padding: 15px 0;
 }
 
 .gallery-card {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    height: 250px;
+    border-radius: 6px;
+    height: 240px;
 }
 
 .gallery-card img {
@@ -85,7 +63,7 @@
 }
 
 .gallery-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .card-overlay {
@@ -93,32 +71,26 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    padding: 15px;
     color: #ffffff;
 }
 
-.card-overlay h5 {
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-}
-
-/* 4. REAL ESTATE HOVER STYLES */
+/* 4. REAL ESTATE HOVER EFFECT */
 .hover-zoom {
     transition: transform 0.3s ease;
 }
 
 .hover-zoom:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
-/* 5. FOOTER DISPLAY SETUP */
-footer {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    background-color: #000000 !important;
-    color: #6c757d !important;
-    padding: 2rem 0 !important;
+/* 5. FOOTER LINK HOVER SYSTEM */
+.hover-light {
+    color: #6c757d;
+    transition: color 0.2s ease;
+}
+
+.hover-light:hover {
+    color: #ffffff !important;
 }
