@@ -16,33 +16,51 @@
         .title-line { width: 50px; height: 3px; background-color: #212529; margin: 10px auto 15px auto; }
         .bg-dark .title-line { background-color: #ffffff; }
         .text-muted { color: #6c757d; }
+        
+        /* HEADER NAVIGATION & MOBILE ACTIONS */
         header.nav-header { background-color: #ffffff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 15px 0; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; position: relative; }
         .logo-fallback { color: #212529; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
-        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-menu { display: flex; list-style: none; gap: 25px; transition: all 0.3s ease; }
         .nav-link-custom { color: #495057; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
-        .hero-section { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/hero-gallery-1.jpg') no-repeat center center / cover; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 40px 20px; }
+        .nav-link-custom:hover { color: #000000; }
+        
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #212529; }
+        
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background-color: #ffffff; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); gap: 15px; }
+            .nav-menu.active { display: flex; }
+        }
+
+        .hero-section { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('imageshero1.jpg') no-repeat center center / cover; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 40px 20px; }
         .hero-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
         .hero-subtitle { font-size: 1.1rem; max-width: 700px; margin: 0 auto 25px auto; }
         .btn-pill { display: inline-block; padding: 10px 25px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; border-radius: 50px; font-weight: 600; }
+        
         .ex-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .gallery-card { position: relative; height: 220px; background-color: #495057; background-position: center; background-size: cover; border-radius: 6px; display: flex; align-items: flex-end; overflow: hidden; }
         .card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.85)); padding: 20px; display: flex; align-items: flex-end; }
         .card-overlay h5 { font-size: 1.2rem; font-weight: 700; color: #ffffff; }
+        
         .about-card { display: flex; flex-direction: column; justify-content: flex-end; padding: 25px 20px; height: 240px; background-color: #495057; border-radius: 6px; background-position: center; background-size: cover; position: relative; overflow: hidden; }
         .about-card-content { position: relative; z-index: 2; color: #ffffff; }
         .about-card h5 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
         .about-card p { font-size: 0.85rem; color: #e9ecef; }
+        
         .split-layout { display: flex; flex-wrap: wrap; gap: 40px; }
         .split-col { flex: 1 1 450px; min-width: 300px; }
         .contact-list { list-style: none; margin-top: 20px; }
         .contact-list li { margin-bottom: 12px; color: #a8aeb4; }
+        
         .form-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
         .form-col { flex: 1 1 200px; }
         .form-group { margin-bottom: 15px; }
         .form-label { display: block; font-size: 0.85rem; color: #a8aeb4; margin-bottom: 5px; }
         .form-control { width: 100%; padding: 10px; background: transparent; border: 1px solid #495057; color: #ffffff; border-radius: 4px; }
+        .form-control:focus { outline: none; border-color: #ffffff; }
         .btn-light { background-color: #ffffff; color: #212529; padding: 12px 30px; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; }
+        
         footer { background-color: #000000; color: #6c757d; padding: 30px 0; text-align: center; }
         .footer-links { display: flex; justify-content: center; list-style: none; gap: 25px; margin-bottom: 15px; }
         .footer-links a { color: #6c757d; text-decoration: none; }
@@ -54,7 +72,8 @@
     <header class="nav-header">
         <div class="container nav-container">
             <a href="#" class="logo-fallback"><span id="brand-text">Berkshire Group</span></a>
-            <ul class="nav-menu">
+            <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <ul class="nav-menu" id="nav-list">
                 <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
                 <li><a class="nav-link-custom" href="#real-estate">Real Estate</a></li>
                 <li><a class="nav-link-custom" href="#about-us">About Us</a></li>
@@ -81,10 +100,10 @@
                 <p class="text-muted">Explore our premium multi-brand commercial vehicle ecosystems.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="gallery-card" style="background-image: url('images/hero-gallery-1.jpg');"><div class="card-overlay"><h5>Showrooms</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/hero-gallery-2.jpg');"><div class="card-overlay"><h5>Service Centers</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/hero-gallery-3.jpg');"><div class="card-overlay"><h5>Fleet Logistics</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/hero-gallery-4.jpg');"><div class="card-overlay"><h5>Premium Vehicles</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imageshero1.jpg');"><div class="card-overlay"><h5>Showrooms</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imageshero2.jpg');"><div class="card-overlay"><h5>Service Centers</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imageshero3.jpg');"><div class="card-overlay"><h5>Fleet Logistics</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imageshero4.jpg');"><div class="card-overlay"><h5>Premium Vehicles</h5></div></div>
             </div>
         </div>
     </section>
@@ -98,10 +117,10 @@
                 <p class="text-muted">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="gallery-card" style="background-image: url('images/real-estate-1.jpg');"><div class="card-overlay"><h5>Commercial Hubs</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/real-estate-2.jpg');"><div class="card-overlay"><h5>Residential Spaces</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/real-estate-3.jpg');"><div class="card-overlay"><h5>Property Management</h5></div></div>
-                <div class="gallery-card" style="background-image: url('images/real-estate-4.jpg');"><div class="card-overlay"><h5>Development Strategy</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imagesrealestate1.jpg');"><div class="card-overlay"><h5>Commercial Hubs</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imagesrealestate2.jpg');"><div class="card-overlay"><h5>Residential Spaces</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imagesrealestate3.jpg');"><div class="card-overlay"><h5>Property Management</h5></div></div>
+                <div class="gallery-card" style="background-image: url('imagesrealestate4.jpg');"><div class="card-overlay"><h5>Development Strategy</h5></div></div>
             </div>
         </div>
     </section>
@@ -115,13 +134,13 @@
                 <p class="text-muted">Our core foundational pillars guiding cross-industry excellence.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="about-card" style="background-image: url('images/about-1.jpg');">
+                <div class="about-card" style="background-image: url('imagesabout1.jpg');">
                     <div class="about-card-content"><h5>Our Vision</h5><p>Setting the modern benchmark for premium asset management and partnerships.</p></div>
                 </div>
-                <div class="about-card" style="background-image: url('images/about-2.jpg');">
+                <div class="about-card" style="background-image: url('imagesabout2.jpg');">
                     <div class="about-card-content"><h5>Integrity First</h5><p>Building long-term retail and residential value through transparent workflows.</p></div>
                 </div>
-                <div class="about-card" style="background-image: url('images/about-3.jpg');">
+                <div class="about-card" style="background-image: url('imagesabout3.jpg');">
                     <div class="about-card-content"><h5>Operational Focus</h5><p>Delivering consistent engineering, support, and infrastructure management pipelines.</p></div>
                 </div>
             </div>
@@ -134,15 +153,3 @@
             <div class="split-layout">
                 <div class="split-col">
                     <h2>Get In Touch</h2>
-                    <div class="title-line"></div>
-                    <p>Reach out to discover investment openings, corporate vehicle pricing structures, or available commercial leasing spaces.</p>
-                    <ul class="contact-list">
-                        <li><strong>Email:</strong> info@berkshiregroup.com</li>
-                        <li><strong>Phone:</strong> +1 (555) 019-2834</li>
-                        <li><strong>Headquarters:</strong> 100 Corporate Parkway, Suite 500</li>
-                    </ul>
-                </div>
-                <div class="split-col">
-                    <form action="#" method="POST">
-                        <div class="form-row">
-                            <div class="form-col"><label class="form-label">First Name</label><input type="text" class="form-control" required></div>
