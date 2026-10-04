@@ -1,35 +1,33 @@
 /* ==========================================================================
-   BERKSHIRE GROUP - CLEAN STRUCTURAL STYLES
+   BERKSHIRE GROUP - PERFECTLY PROPORTIONED PRODUCTION CODE
    ========================================================================== */
 
-/* 1. BRANDING & NAVIGATION */
+/* 1. BRANDING & NAVIGATION FLUIDITY */
 .main-logo {
-    height: 45px !important; /* Fixed premium size so it does not distort layout */
+    height: 42px !important;
     width: auto;
     object-fit: contain;
 }
 
-/* Smooth color transitions for header links */
-.nav-link {
-    color: #495057 !important;
-    transition: color 0.2s ease;
+.nav-link-custom {
+    color: #495057;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
 }
 
-.nav-link:hover, 
-.nav-link.active {
+.nav-link-custom:hover {
     color: #000000 !important;
 }
 
-/* 2. HERO SECTION */
+/* 2. HERO SECTION CONSTRAINTS */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("hero-gallery-1.jpg") no-repeat center center;
     background-size: cover;
-    min-height: 65vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
 }
 
-/* Decorative visual lines */
 .title-line {
     width: 50px;
     height: 3px;
@@ -41,7 +39,7 @@
     background-color: #f8f9fa !important;
 }
 
-/* 3. AUTOMOTIVE GRID LOGIC */
+/* 3. SHOWCASE MESH LAYOUT */
 .ex-gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -63,7 +61,7 @@
 }
 
 .gallery-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
 .card-overlay {
@@ -76,7 +74,7 @@
     color: #ffffff;
 }
 
-/* 4. REAL ESTATE HOVER EFFECT */
+/* 4. REAL ESTATE HOVER LOGIC */
 .hover-zoom {
     transition: transform 0.3s ease;
 }
@@ -85,7 +83,7 @@
     transform: scale(1.02);
 }
 
-/* 5. FOOTER LINK HOVER SYSTEM */
+/* 5. FOOTER COLOR MAPPING */
 .hover-light {
     color: #6c757d;
     transition: color 0.2s ease;
