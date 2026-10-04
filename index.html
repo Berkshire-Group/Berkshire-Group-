@@ -17,7 +17,6 @@
         .bg-dark .title-line { background-color: #ffffff; }
         .text-muted { color: #6c757d; }
         
-        /* HEADER NAVIGATION & MOBILE ACTIONS */
         header.nav-header { background-color: #ffffff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 15px 0; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; position: relative; }
         .logo-fallback { color: #212529; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
@@ -33,7 +32,7 @@
             .nav-menu.active { display: flex; }
         }
 
-        .hero-section { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('imageshero1.jpg') no-repeat center center / cover; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 40px 20px; }
+        .hero-section { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://picsum.photos') no-repeat center center / cover; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 40px 20px; }
         .hero-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
         .hero-subtitle { font-size: 1.1rem; max-width: 700px; margin: 0 auto 25px auto; }
         .btn-pill { display: inline-block; padding: 10px 25px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; border-radius: 50px; font-weight: 600; }
@@ -44,6 +43,7 @@
         .card-overlay h5 { font-size: 1.2rem; font-weight: 700; color: #ffffff; }
         
         .about-card { display: flex; flex-direction: column; justify-content: flex-end; padding: 25px 20px; height: 240px; background-color: #495057; border-radius: 6px; background-position: center; background-size: cover; position: relative; overflow: hidden; }
+        .about-card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85)); z-index: 1; }
         .about-card-content { position: relative; z-index: 2; color: #ffffff; }
         .about-card h5 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
         .about-card p { font-size: 0.85rem; color: #e9ecef; }
@@ -100,10 +100,10 @@
                 <p class="text-muted">Explore our premium multi-brand commercial vehicle ecosystems.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="gallery-card" style="background-image: url('imageshero1.jpg');"><div class="card-overlay"><h5>Showrooms</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imageshero2.jpg');"><div class="card-overlay"><h5>Service Centers</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imageshero3.jpg');"><div class="card-overlay"><h5>Fleet Logistics</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imageshero4.jpg');"><div class="card-overlay"><h5>Premium Vehicles</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Showrooms</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Service Centers</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Fleet Logistics</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Premium Vehicles</h5></div></div>
             </div>
         </div>
     </section>
@@ -117,10 +117,10 @@
                 <p class="text-muted">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="gallery-card" style="background-image: url('imagesrealestate1.jpg');"><div class="card-overlay"><h5>Commercial Hubs</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imagesrealestate2.jpg');"><div class="card-overlay"><h5>Residential Spaces</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imagesrealestate3.jpg');"><div class="card-overlay"><h5>Property Management</h5></div></div>
-                <div class="gallery-card" style="background-image: url('imagesrealestate4.jpg');"><div class="card-overlay"><h5>Development Strategy</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Commercial Hubs</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Residential Spaces</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Property Management</h5></div></div>
+                <div class="gallery-card" style="background-image: url('https://picsum.photos');"><div class="card-overlay"><h5>Development Strategy</h5></div></div>
             </div>
         </div>
     </section>
@@ -134,22 +134,12 @@
                 <p class="text-muted">Our core foundational pillars guiding cross-industry excellence.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="about-card" style="background-image: url('imagesabout1.jpg');">
+                <div class="about-card" style="background-image: url('https://picsum.photos1');">
+                    <div class="about-card-overlay"></div>
                     <div class="about-card-content"><h5>Our Vision</h5><p>Setting the modern benchmark for premium asset management and partnerships.</p></div>
                 </div>
-                <div class="about-card" style="background-image: url('imagesabout2.jpg');">
+                <div class="about-card" style="background-image: url('https://picsum.photos2');">
+                    <div class="about-card-overlay"></div>
                     <div class="about-card-content"><h5>Integrity First</h5><p>Building long-term retail and residential value through transparent workflows.</p></div>
                 </div>
-                <div class="about-card" style="background-image: url('imagesabout3.jpg');">
-                    <div class="about-card-content"><h5>Operational Focus</h5><p>Delivering consistent engineering, support, and infrastructure management pipelines.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT INQUIRY SECTION -->
-    <section id="contact" class="py-5 bg-dark">
-        <div class="container">
-            <div class="split-layout">
-                <div class="split-col">
-                    <h2>Get In Touch</h2>
+                <div class="about-card" style="background-image: url('https://picsum.photos3');">
