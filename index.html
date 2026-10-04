@@ -16,20 +16,16 @@
 
     <!-- STICKY NAVIGATION BAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo">
             </a>
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Clean Header Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-3">
-                    <li class="nav-item"><a class="nav-link fw-semibold" href="#automotive">Automotive</a></li>
-                    <li class="nav-item"><a class="nav-link fw-semibold" href="#real-estate">Real Estate</a></li>
-                    <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contact</a></li>
+            <!-- Clean Header Links forced into a straight horizontal layout -->
+            <div class="d-flex align-items-center">
+                <ul class="d-flex flex-row list-unstyled gap-4 mb-0 align-items-center">
+                    <li><a class="text-dark fw-semibold text-decoration-none nav-link-custom" href="#automotive">Automotive</a></li>
+                    <li><a class="text-dark fw-semibold text-decoration-none nav-link-custom" href="#real-estate">Real Estate</a></li>
+                    <li><a class="text-dark fw-semibold text-decoration-none nav-link-custom" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
