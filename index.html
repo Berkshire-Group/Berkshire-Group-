@@ -7,119 +7,47 @@
     <title>Berkshire Group</title>
     <!-- Browser Tab Icon -->
     <link rel="icon" href="images/site-icon.png" type="image/png">
+    <!-- Clean Bootstrap 5 Framework -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
     
-    <!-- PURE INDEPENDENT STYLESHEET (NO EXTERNAL SERVERS REQUIRED) -->
+    <!-- EMBEDDED INTERNAL CUSTOM CSS STYLESHEET -->
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            background-color: #ffffff;
-            color: #212529;
-            line-height: 1.5;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 1. HEADER LOGO & HORIZONTAL NAVIGATION STACK */
-        header.nav-header {
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            padding: 15px 0;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* 1. HEADER BRANDING & HORIZONTAL STACK LINKS */
         .main-logo {
-            height: 42px;
+            height: 45px !important;
             width: auto;
-            display: block;
-        }
-        .nav-menu {
-            display: flex !important;
-            flex-direction: row !important;
-            list-style: none;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
+            object-fit: contain;
         }
         .nav-link-custom {
             color: #495057;
-            font-weight: 600;
-            text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out;
         }
         .nav-link-custom:hover {
-            color: #000000;
+            color: #000000 !important;
         }
 
         /* 2. HERO BANNER DISPLAY */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/hero-gallery-1.jpg") no-repeat center center;
             background-size: cover;
-            min-height: 60vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            padding: 60px 20px;
         }
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .hero-subtitle {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 25px auto;
-            color: #f8f9fa;
-        }
-        .btn-pill {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 2px solid #ffffff;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-        .btn-pill:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        /* 3. SECTION SPACING & TITLES */
-        .py-5 { padding: 80px 0; }
-        .bg-light { background-color: #f8f9fa; }
-        .bg-dark { background-color: #212529; color: #ffffff; }
-        .text-center { text-align: center; }
-        .mb-5 { margin-bottom: 45px; }
         .title-line {
             width: 50px;
             height: 3px;
             background-color: #212529;
-            margin: 10px auto 15px auto;
+            margin-top: 0.5rem;
         }
-        .bg-dark .title-line { background-color: #ffffff; }
-        .text-muted { color: #6c757d; }
+        .title-line.bg-light {
+            background-color: #f8f9fa !important;
+        }
 
-        /* 4. GRID SYSTEM BUILD (AUTOMOTIVE GALLERY) */
+        /* 3. SHOWCASE MESH GRID SYSTEM (AUTOMOTIVE) */
         .ex-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -130,10 +58,6 @@
             overflow: hidden;
             border-radius: 6px;
             height: 240px;
-            background-color: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .gallery-card img {
             width: 100%;
@@ -141,7 +65,9 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        .gallery-card:hover img { transform: scale(1.03); }
+        .gallery-card:hover img {
+            transform: scale(1.03);
+        }
         .card-overlay {
             position: absolute;
             bottom: 0;
@@ -150,106 +76,51 @@
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
             padding: 15px;
             color: #ffffff;
-            z-index: 2;
         }
 
-        /* 5. SPLIT FLEX SYSTEM (REAL ESTATE & CONTACT) */
-        .split-layout {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
+        /* 4. PROPERTIES INTERACTIONS */
+        .hover-zoom {
+            transition: transform 0.3s ease;
         }
-        .split-col {
-            flex: 1 1 450px;
-            min-width: 300px;
-        }
-        .img-fluid {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .btn-dark {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #212529;
-            color: #ffffff;
-            text-decoration: none;
-            margin-top: 15px;
-            font-weight: 600;
-            border-radius: 4px;
+        .hover-zoom:hover {
+            transform: scale(1.02);
         }
 
-        /* 6. CONTACT FORMS */
-        .contact-list { list-style: none; margin-top: 20px; }
-        .contact-list li { margin-bottom: 12px; color: #a8aeb4; }
-        .form-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-        .form-col { flex: 1 1 200px; }
-        .form-group { margin-bottom: 15px; }
-        .form-label { display: block; font-size: 0.85rem; color: #a8aeb4; margin-bottom: 5px; }
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            background: transparent;
-            border: 1px solid #495057;
-            color: #ffffff;
-            border-radius: 4px;
-        }
-        .btn-light {
-            background-color: #ffffff;
-            color: #212529;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        /* 7. FOOTER SECTION FLAT VIEW */
-        footer {
-            background-color: #000000;
+        /* 5. FOOTER DISPLAY SYSTEMS */
+        .hover-light {
             color: #6c757d;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-            margin-bottom: 15px;
-        }
-        .footer-links a {
-            color: #6c757d;
-            text-decoration: none;
             transition: color 0.2s ease;
         }
-        .footer-links a:hover { color: #ffffff; }
+        .hover-light:hover {
+            color: #ffffff !important;
+        }
     </style>
 </head>
 <body>
 
     <!-- STICKY NAVIGATION BAR -->
-    <header class="nav-header">
-        <div class="container nav-container">
-            <a href="index.html">
-                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<strong style=\"color:#212529; font-size:1.25rem;\">Berkshire Group</strong>';">
+    <nav class="navbar navbar-light bg-white sticky-top shadow-sm py-3" style="display: block !important;">
+        <div class="container d-flex justify-content-between align-items-center flex-row flex-nowrap">
+            <a class="navbar-brand d-flex align-items-center mb-0" href="index.html">
+                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo">
             </a>
-            <ul class="nav-menu">
-                <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
-                <li><a class="nav-link-custom" href="#real-estate">Real Estate</a></li>
-                <li><a class="nav-link-custom" href="#contact">Contact</a></li>
-            </ul>
+            <!-- Forced Horizontal Menu Strip Layout -->
+            <div class="d-flex align-items-center">
+                <ul class="d-flex flex-row list-unstyled gap-4 mb-0 align-items-center" style="flex-direction: row !important; display: flex !important; list-style: none !important; padding-left: 0 !important;">
+                    <li style="display: inline-block;"><a class="fw-semibold nav-link-custom" href="#automotive">Automotive</a></li>
+                    <li style="display: inline-block;"><a class="fw-semibold nav-link-custom" href="#real-estate">Real Estate</a></li>
+                    <li style="display: inline-block;"><a class="fw-semibold nav-link-custom" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero-section">
-        <div>
-            <h1 class="hero-title">Welcome to Berkshire Group</h1>
-            <p class="hero-subtitle">Driving excellence across premium automotive networks and exceptional real estate solutions.</p>
-            <a href="#contact" class="btn-pill">Get In Touch</a>
+    <header class="hero-section text-center text-white d-flex align-items-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Welcome to Berkshire Group</h1>
+            <p class="lead mb-4">Driving excellence across premium automotive networks and exceptional real estate solutions.</p>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4 rounded-pill">Get In Touch</a>
         </div>
     </header>
 
@@ -257,22 +128,83 @@
     <section id="automotive" class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2>Automotive Dealerships</h2>
-                <div class="title-line"></div>
-                <p class="text-muted">Explore our premium multi-brand commercial vehicle ecosystems.</p>
+                <h2 class="fw-bold h1">Automotive Dealerships</h2>
+                <div class="title-line mx-auto"></div>
+                <p class="text-muted mt-2">Explore our premium multi-brand commercial vehicle ecosystems.</p>
             </div>
             
             <div class="ex-gallery-grid">
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-1.jpg" alt="Dealership Showroom" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Showrooms</div>');">
+                    <img src="images/hero-gallery-1.jpg" alt="Dealership Showroom">
                     <div class="card-overlay"><h5>Showrooms</h5></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-2.jpg" alt="Service Bay" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Service Centers</div>');">
+                    <img src="images/hero-gallery-2.jpg" alt="Service Bay">
                     <div class="card-overlay"><h5>Service Centers</h5></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="images/hero-gallery-3.jpg" alt="Fleet Logistics" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<div style=\"color:#6c757d; font-weight:500; padding:20px;\">📷 Fleet Logistics</div>');">
+                    <img src="images/hero-gallery-3.jpg" alt="Fleet Fleet">
                     <div class="card-overlay"><h5>Fleet Logistics</h5></div>
                 </div>
                 <div class="gallery-card">
+                    <img src="images/hero-gallery-4.jpg" alt="Luxury Inventory">
+                    <div class="card-overlay"><h5>Premium Vehicles</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL ESTATE PORTFOLIO -->
+    <section id="real-estate" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold h1">Real Estate Operations</h2>
+                    <div class="title-line mb-3"></div>
+                    <p class="lead text-dark fw-semibold">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
+                    <p class="text-muted">From tailored administrative offices to premium lofts, our strategic structural investments focus on long-term capital stability and unparalleled asset reliability.</p>
+                    <a href="#contact" class="btn btn-dark btn-lg px-4 mt-2">View Properties</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-wrapper rounded shadow-lg overflow-hidden">
+                        <img src="images/hero-properties.jpg" alt="Berkshire Real Estate Portfolio" class="img-fluid w-100 hover-zoom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKING CONTACT MODULE -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="fw-bold h1 text-white">Contact Us</h2>
+                    <div class="title-line bg-light mb-3"></div>
+                    <p class="text-secondary mb-4">Have questions about our vehicle availability or property lease applications? Leave us a message below.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3 text-secondary">
+                        <li>📍 <strong>HQ Address:</strong> Berkshire Corporate Offices, Ashland, OR</li>
+                        <li>✉️ <strong>Inquiries:</strong> info@berkshiregroup.com</li>
+                        <li>📞 <strong>Support:</strong> +1 (541) 555-0199</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <form action="https://formsubmit.co" method="POST" class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-secondary small">Full Name</label>
+                            <input type="text" name="name" class="form-control bg-transparent text-white border-secondary" placeholder="John Doe" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-secondary small">Email Address</label>
+                            <input type="email" name="email" class="form-control bg-transparent text-white border-secondary" placeholder="john@example.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-secondary small">Select Service Interested In</label>
+                            <select name="service" class="form-select bg-transparent text-secondary border-secondary">
+                                <option value="Automotive">Automotive Fleets &amp; Dealerships</option>
+                                <option value="Real Estate">Commercial &amp; Residential Real Estate</option>
+                                <option value="General">General Corporate Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-secondary small">Your Message</label>
