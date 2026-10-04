@@ -136,8 +136,9 @@
             position: relative;
             overflow: hidden;
             border-radius: 6px;
+            min-height: 240px; /* Forces cards to display even if images fail to load */
             height: 240px;
-            background-color: #f1f3f5;
+            background-color: #f1f3f5; /* Visible backup background tint */
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -157,6 +158,7 @@
         .card-overlay h5 {
             font-size: 1.2rem;
             font-weight: 700;
+            color: #ffffff;
         }
                 
         /* About Section Cards Custom Design Layout */
@@ -298,7 +300,4 @@
             <div class="ex-gallery-grid">
                 <div class="gallery-card" style="background-image: url('images/hero-gallery-1.jpg');">
                     <div class="card-overlay"><h5>Showrooms</h5></div>
-                </div>
-                <div class="gallery-card" style="background-image: url('images/hero-gallery-2.jpg');">
-                    <div class="card-overlay"><h5>Service Centers</h5></div>
                 </div>
