@@ -47,6 +47,12 @@
             width: auto;
             display: block;
         }
+        .logo-fallback {
+            color: #212529;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
         .nav-menu {
             display: flex !important;
             flex-direction: row !important;
@@ -119,7 +125,7 @@
         .bg-dark .title-line { background-color: #ffffff; }
         .text-muted { color: #6c757d; }
 
-        /* 4. GRID SYSTEM BUILD (AUTOMOTIVE GALLERY) */
+        /* 4. GRID SYSTEM BUILD (AUTOMOTIVE & REAL ESTATE GALLERIES) */
         .ex-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -146,7 +152,7 @@
             z-index: 2;
         }
 
-        /* 5. SPLIT FLEX SYSTEM (REAL ESTATE & CONTACT) */
+        /* 5. SPLIT FLEX SYSTEM (CONTACT SECTION) */
         .split-layout {
             display: flex;
             flex-wrap: wrap;
@@ -156,27 +162,6 @@
         .split-col {
             flex: 1 1 450px;
             min-width: 300px;
-        }
-        .image-box-fallback {
-            width: 100%;
-            height: 380px;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background-color: #f1f3f5;
-            background-image: url("images/hero-properties.jpg");
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .btn-dark {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #212529;
-            color: #ffffff;
-            text-decoration: none;
-            margin-top: 15px;
-            font-weight: 600;
-            border-radius: 4px;
         }
 
         /* 6. CONTACT FORMS */
@@ -232,8 +217,9 @@
     <!-- STICKY NAVIGATION BAR -->
     <header class="nav-header">
         <div class="container nav-container">
-            <a href="index.html">
-                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<strong style=\"color:#212529; font-size:1.25rem;\">Berkshire Group</strong>';">
+            <a href="index.html" class="logo-fallback">
+                <img src="images/logo-dark.png" alt="Berkshire Group" class="main-logo" onerror="this.style.display='none';">
+                <span id="brand-text">Berkshire Group</span>
             </a>
             <ul class="nav-menu">
                 <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
@@ -278,11 +264,20 @@
         </div>
     </section>
 
-    <!-- REAL ESTATE PORTFOLIO -->
+    <!-- REAL ESTATE PORTFOLIO (Now matches the clean 4-column display grid) -->
     <section id="real-estate" class="py-5">
         <div class="container">
-            <div class="split-layout">
-                <div class="split-col">
-                    <h2>Real Estate Operations</h2>
-                    <div class="title-line" style="margin-left: 0;"></div>
-                    <p style="font-size: 1.15rem; margin-bottom: 15px; font-weight: 500;">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
+            <div class="text-center mb-5">
+                <h2>Real Estate Operations</h2>
+                <div class="title-line"></div>
+                <p class="text-muted">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p>
+            </div>
+            
+            <div class="ex-gallery-grid">
+                <div class="gallery-card" style="background-image: url('images/hero-properties.jpg');">
+                    <div class="card-overlay"><h5>Commercial Hubs</h5></div>
+                </div>
+                <div class="gallery-card" style="background-image: url('images/hero-gallery-2.jpg');">
+                    <div class="card-overlay"><h5>Administrative Offices</h5></div>
+                </div>
+                <div class="gallery-card" style="background-image: url('images/hero-gallery-3.jpg');">
