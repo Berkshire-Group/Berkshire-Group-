@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth; /* Enables smooth sliding navigation */
+            scroll-behavior: smooth;
         }
         body {
             background-color: #ffffff;
@@ -55,8 +55,7 @@
             text-decoration: none;
         }
         .nav-menu {
-            display: flex !important;
-            flex-direction: row !important;
+            display: flex;
             list-style: none;
             gap: 25px;
             margin: 0;
@@ -73,7 +72,7 @@
             color: #000000;
         }
 
-        /* 2. HERO BAN DISPLAY */
+        /* 2. HERO BANNER DISPLAY */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/hero-gallery-1.jpg") no-repeat center center;
             background-size: cover;
@@ -126,7 +125,7 @@
         .bg-dark .title-line { background-color: #ffffff; }
         .text-muted { color: #6c757d; }
 
-        /* 4. GRID SYSTEM BUILD (AUTOMOTIVE, REAL ESTATE, & PILLARS) */
+        /* 4. GRID SYSTEM BUILD */
         .ex-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -136,9 +135,8 @@
             position: relative;
             overflow: hidden;
             border-radius: 6px;
-            min-height: 240px; /* Forces cards to display even if images fail to load */
             height: 240px;
-            background-color: #f1f3f5; /* Visible backup background tint */
+            background-color: #495057; /* Safe fall-back dark background if image is missing */
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -147,16 +145,18 @@
         }
         .card-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-            padding: 15px;
-            color: #ffffff;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0, 0, 0, 0.85));
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
             z-index: 2;
         }
         .card-overlay h5 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #ffffff;
         }
@@ -168,13 +168,22 @@
             justify-content: flex-end;
             padding: 25px 20px;
             height: 260px;
-            background-color: #e9ecef;
+            background-color: #495057;
             border-radius: 6px;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
+        }
+        .about-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85));
+            z-index: 1;
         }
         .about-card-content {
             position: relative;
@@ -288,7 +297,7 @@
         </div>
     </header>
 
-    <!-- AUTOMOTIVE PORTFOLIO -->
+    <!-- AUTOMOTIVE PORTFOLIO SECTION -->
     <section id="automotive" class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
@@ -299,5 +308,3 @@
             
             <div class="ex-gallery-grid">
                 <div class="gallery-card" style="background-image: url('images/hero-gallery-1.jpg');">
-                    <div class="card-overlay"><h5>Showrooms</h5></div>
-                </div>
