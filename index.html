@@ -33,8 +33,11 @@
         .card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.85)); padding: 20px; display: flex; align-items: flex-end; }
         .card-overlay h5 { font-size: 1.2rem; font-weight: 700; color: #ffffff; }
         
-        /* FIXED ABOUT CARDS SPECIFYING BASE LAYERS DIRECTLY */
+        /* CORRECTED ABOUT CARDS GRID DESIGN */
         .about-card { position: relative; height: 240px; background-color: #495057; background-position: center; background-size: cover; border-radius: 6px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+        .ab1 { background-image: url('imagesabout1.jpg'); }
+        .ab2 { background-image: url('imagesabout2.jpg'); }
+        .ab3 { background-image: url('imagesabout3.jpg'); }
         .about-card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85)); z-index: 1; }
         .about-card-content { position: relative; z-index: 2; padding: 25px 20px; color: #ffffff; }
         .about-card h5 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
@@ -123,21 +126,21 @@
                 <p class="text-muted">Our core foundational pillars guiding cross-industry excellence.</p>
             </div>
             <div class="ex-gallery-grid">
-                <div class="about-card" style="background-image: url('imagesabout1.jpg');">
+                <div class="about-card ab1">
                     <div class="about-card-overlay"></div>
                     <div class="about-card-content">
                         <h5>Our Vision</h5>
                         <p>Setting the modern benchmark for premium asset management and partnerships.</p>
                     </div>
                 </div>
-                <div class="about-card" style="background-image: url('imagesabout2.jpg');">
+                <div class="about-card ab2">
                     <div class="about-card-overlay"></div>
                     <div class="about-card-content">
                         <h5>Integrity First</h5>
                         <p>Building long-term retail and residential value through transparent workflows.</p>
                     </div>
                 </div>
-                <div class="about-card" style="background-image: url('imagesabout3.jpg');">
+                <div class="about-card ab3">
                     <div class="about-card-overlay"></div>
                     <div class="about-card-content">
                         <h5>Operational Focus</h5>
@@ -155,4 +158,3 @@
                 <div class="split-col">
                     <h2>Get In Touch</h2>
                     <div class="title-line"></div>
-                    <p style="margin-bottom: 20px;">Reach out to discover investment openings, corporate vehicle pricing structures, or available commercial leasing spaces.</p>
