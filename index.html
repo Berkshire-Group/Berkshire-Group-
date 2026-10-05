@@ -4,661 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Berkshire Group</title>
-
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#fff;
-    color:#212529;
-    line-height:1.5;
-}
-
-.container{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
-}
-
-.py-5{padding:60px 0}
-.bg-light{background:#f8f9fa}
-.bg-dark{background:#212529;color:#fff}
-.text-center{text-align:center}
-.mb-5{margin-bottom:35px}
-
-.title-line{
-    width:50px;
-    height:3px;
-    background:#212529;
-    margin:10px auto 15px;
-}
-
-.bg-dark .title-line{background:#fff}
-.text-muted{color:#6c757d}
-
-/* NAVIGATION */
-.nav-header{
-    background:#fff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    padding:15px 0;
-}
-
-.nav-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    color:#212529;
-    font-size:1.25rem;
-    font-weight:700;
-    text-decoration:none;
-}
-
-.nav-menu{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-.nav-menu a{
-    color:#495057;
-    font-weight:600;
-    text-decoration:none;
-    font-size:.95rem;
-}
-
-/* HERO */
-.hero-section{
-    background:
-        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-        url("images/hero-gallery-1.jpg")
-        center center/cover no-repeat;
-
-    min-height:50vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    padding:40px 20px;
-}
-
-.hero-title{
-    font-size:2.5rem;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.hero-subtitle{
-    font-size:1.1rem;
-    max-width:700px;
-    margin:0 auto 25px;
-}
-
-.btn-pill{
-    display:inline-block;
-    padding:10px 25px;
-    border:2px solid #fff;
-    color:#fff;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-}
-
-/* GALLERIES */
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
-
-.gallery-card{
-    position:relative;
-    height:220px;
-    background:#495057 center/cover no-repeat;
-    border-radius:6px;
-    overflow:hidden;
-}
-
-.card-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.85)
-    );
-    padding:20px;
-    display:flex;
-    align-items:flex-end;
-}
-
-.card-overlay h5{
-    font-size:1.2rem;
-    color:#fff;
-    font-weight:700;
-}
-
-/* ABOUT */
-.about-card{
-    height:240px;
-    background:#495057 center/cover no-repeat;
-    border-radius:6px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:flex-end;
-    padding:25px 20px;
-}
-
-.about-card:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.85)
-    );
-}
-
-.about-card-content{
-    position:relative;
-    z-index:2;
-    color:#fff;
-}
-
-.about-card h5{
-    font-size:1.2rem;
-    margin-bottom:8px;
-}
-
-.about-card p{
-    font-size:.85rem;
-    color:#e9ecef;
-}
-
-/* CONTACT */
-.split-layout{
-    display:flex;
-    flex-wrap:wrap;
-    gap:40px;
-}
-
-.split-col{
-    flex:1 1 450px;
-    min-width:300px;
-}
-
-.contact-list{
-    list-style:none;
-    margin-top:20px;
-}
-
-.contact-list li{
-    margin-bottom:12px;
-    color:#a8aeb4;
-}
-
-.form-row{
-    display:flex;
-    gap:15px;
-    margin-bottom:15px;
-    flex-wrap:wrap;
-}
-
-.form-col{
-    flex:1 1 200px;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-label{
-    display:block;
-    font-size:.85rem;
-    color:#a8aeb4;
-    margin-bottom:5px;
-}
-
-.form-control{
-    width:100%;
-    padding:10px;
-    background:transparent;
-    border:1px solid #495057;
-    color:#fff;
-    border-radius:4px;
-}
-
-.btn-light{
-    background:#fff;
-    color:#212529;
-    padding:12px 30px;
-    border:0;
-    border-radius:50px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* FOOTER */
-footer{
-    background:#000;
-    color:#6c757d;
-    padding:30px 0;
-    text-align:center;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-    .nav-container{
-        flex-direction:column;
-        gap:12px;
-    }
-
-    .nav-menu{
-        gap:12px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .nav-menu a{
-        font-size:.8rem;
-    }
-
-    .hero-title{
-        font-size:2rem;
-    }
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,sans-serif;scroll-behavior:smooth}
+body{background:#fff;color:#212529;line-height:1.5}
+.container{width:100%;max-width:1200px;margin:auto;padding:0 20px}
+.py-5{padding:60px 0}.bg-light{background:#f8f9fa}.bg-dark{background:#212529;color:#fff}
+.text-center{text-align:center}.mb-5{margin-bottom:35px}
+.title-line{width:50px;height:3px;background:#212529;margin:10px auto 15px}
+.bg-dark .title-line{background:#fff}.text-muted{color:#6c757d}
+header.nav-header{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:15px 0}
+.nav-container{display:flex;justify-content:space-between;align-items:center}
+.logo-fallback{color:#212529;font-size:1.25rem;font-weight:700;text-decoration:none}
+.nav-menu{display:flex;list-style:none;gap:25px}.nav-link-custom{color:#495057;font-weight:600;text-decoration:none;font-size:.95rem}
+.hero-section{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('images/hero-gallery-1.jpg') no-repeat center/cover;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:40px 20px}
+.hero-title{font-size:2.5rem;font-weight:700;margin-bottom:15px}.hero-subtitle{font-size:1.1rem;max-width:700px;margin:0 auto 25px}
+.btn-pill{display:inline-block;padding:10px 25px;border:2px solid #fff;color:#fff;text-decoration:none;border-radius:50px;font-weight:600}
+.ex-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.gallery-card{position:relative;height:220px;background:#495057;border-radius:6px;overflow:hidden}.gallery-card img,.about-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.card-overlay{position:absolute;z-index:2;inset:0;background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.85));padding:20px;display:flex;align-items:flex-end}
+.card-overlay h5{font-size:1.2rem;font-weight:700;color:#fff}
+.about-card{position:relative;height:240px;background:#495057;border-radius:6px;overflow:hidden}.about-card-content{position:absolute;z-index:3;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:25px 20px;color:#fff;background:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.86))}
+.about-card h5{font-size:1.2rem;font-weight:700;margin-bottom:8px}.about-card p{font-size:.85rem;color:#e9ecef}
+.split-layout{display:flex;flex-wrap:wrap;gap:40px}.split-col{flex:1 1 450px;min-width:300px}
+.contact-list{list-style:none;margin-top:20px}.contact-list li{margin-bottom:12px;color:#a8aeb4}
+.form-row{display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap}.form-col{flex:1 1 200px}.form-group{margin-bottom:15px}
+.form-label{display:block;font-size:.85rem;color:#a8aeb4;margin-bottom:5px}
+.form-control{width:100%;padding:10px;background:transparent;border:1px solid #495057;color:#fff;border-radius:4px}
+.btn-light{background:#fff;color:#212529;padding:12px 30px;border:none;border-radius:50px;cursor:pointer;font-weight:600}
+footer{background:#000;color:#6c757d;padding:30px 0;text-align:center}
+@media(max-width:700px){.nav-menu{gap:10px}.nav-link-custom{font-size:.8rem}.hero-title{font-size:2rem}}
 </style>
 </head>
-
 <body>
-
-<!-- NAVIGATION -->
-<header class="nav-header">
-<div class="container nav-container">
-
-<a href="#" class="logo">
-Berkshire Group
-</a>
-
+<header class="nav-header"><div class="container nav-container">
+<a href="#" class="logo-fallback">Berkshire Group</a>
 <ul class="nav-menu">
-<li><a href="#automotive">Automotive</a></li>
-<li><a href="#real-estate">Real Estate</a></li>
-<li><a href="#about-us">About Us</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
+<li><a class="nav-link-custom" href="#real-estate">Real Estate</a></li>
+<li><a class="nav-link-custom" href="#about-us">About Us</a></li>
+<li><a class="nav-link-custom" href="#contact">Contact</a></li>
 </ul>
-
-</div>
-</header>
-
-
-<!-- HERO -->
-<header class="hero-section">
-
-<div>
-
-<h1 class="hero-title">
-Welcome to Berkshire Group
-</h1>
-
-<p class="hero-subtitle">
-Driving excellence across premium automotive networks and exceptional real estate solutions.
-</p>
-
-<a href="#contact" class="btn-pill">
-Get In Touch
-</a>
-
-</div>
-
-</header>
-
-
-<!-- AUTOMOTIVE -->
-<section id="automotive" class="py-5 bg-light">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<h2>Automotive Dealerships</h2>
-
-<div class="title-line"></div>
-
-<p class="text-muted">
-Explore our premium multi-brand commercial vehicle ecosystems.
-</p>
-
-</div>
-
-
-<div class="gallery-grid">
-
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-1.jpg');">
-
-<div class="card-overlay">
-<h5>Showrooms</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-2.jpg');">
-
-<div class="card-overlay">
-<h5>Service Centers</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-3.jpg');">
-
-<div class="card-overlay">
-<h5>Fleet Logistics</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-4.jpg');">
-
-<div class="card-overlay">
-<h5>Premium Vehicles</h5>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-
-<!-- REAL ESTATE -->
-<section id="real-estate" class="py-5">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<h2>Real Estate Operations</h2>
-
-<div class="title-line"></div>
-
-<p class="text-muted">
-We build, manage, and lease state-of-the-art commercial hubs and residential residences.
-</p>
-
-</div>
-
-
-<div class="gallery-grid">
-
-<div class="gallery-card"
-style="background-image:url('images/real-estate-1.jpg');">
-
-<div class="card-overlay">
-<h5>Commercial Hubs</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/real-estate-2.jpg');">
-
-<div class="card-overlay">
-<h5>Residential Spaces</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/real-estate-3.jpg');">
-
-<div class="card-overlay">
-<h5>Property Management</h5>
-</div>
-
-</div>
-
-
-<div class="gallery-card"
-style="background-image:url('images/real-estate-4.jpg');">
-
-<div class="card-overlay">
-<h5>Development Strategy</h5>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-<section id="about-us" class="py-5 bg-light">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<h2>About Berkshire Group</h2>
-
-<div class="title-line"></div>
-
-<p class="text-muted">
-Our core foundational pillars guiding cross-industry excellence.
-</p>
-
-</div>
-
-
-<div class="gallery-grid">
-
-<div class="about-card"
-style="background-image:url('images/about-1.jpg');">
-
-<div class="about-card-content">
-
-<h5>Our Vision</h5>
-
-<p>
-Setting the modern benchmark for premium asset management and partnerships.
-</p>
-
-</div>
-</div>
-
-
-<div class="about-card"
-style="background-image:url('images/about-2.jpg');">
-
-<div class="about-card-content">
-
-<h5>Integrity First</h5>
-
-<p>
-Building long-term retail and residential value through transparent workflows.
-</p>
-
-</div>
-</div>
-
-
-<div class="about-card"
-style="background-image:url('images/about-3.jpg');">
-
-<div class="about-card-content">
-
-<h5>Operational Focus</h5>
-
-<p>
-Delivering consistent engineering, support, and infrastructure management pipelines.
-</p>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="py-5 bg-dark">
-
-<div class="container">
-
-<div class="split-layout">
-
-
-<div class="split-col">
-
-<h2>Get In Touch</h2>
-
-<div class="title-line"></div>
-
-<p>
-Reach out to discover investment openings,
-corporate vehicle pricing structures,
-or available commercial leasing spaces.
-</p>
-
-<ul class="contact-list">
-
-<li>
-<strong>Email:</strong>
-info@berkshiregroup.com
-</li>
-
-<li>
-<strong>Phone:</strong>
-+1 (555) 019-2834
-</li>
-
-<li>
-<strong>Headquarters:</strong>
-100 Corporate Parkway, Suite 500
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="split-col">
-
-<form>
-
-<div class="form-row">
-
-<div class="form-col">
-
-<label class="form-label">
-First Name
-</label>
-
-<input
-type="text"
-class="form-control"
-required>
-
-</div>
-
-
-<div class="form-col">
-
-<label class="form-label">
-Last Name
-</label>
-
-<input
-type="text"
-class="form-control">
-
-</div>
-
-</div>
-
-
-<div class="form-group">
-
-<label class="form-label">
-Email
-</label>
-
-<input
-type="email"
-class="form-control"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label class="form-label">
-Message
-</label>
-
-<textarea
-class="form-control"
-rows="5">
-</textarea>
-
-</div>
-
-
-<button type="submit" class="btn-light">
-Send Inquiry
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-<div class="container">
-
-<p>
-&copy; 2026 Berkshire Group. All rights reserved.
-</p>
-
-</div>
-
-</footer>
-
+</div></header>
+
+<header class="hero-section"><div>
+<h1 class="hero-title">Welcome to Berkshire Group</h1>
+<p class="hero-subtitle">Driving excellence across premium automotive networks and exceptional real estate solutions.</p>
+<a href="#contact" class="btn-pill">Get In Touch</a>
+</div></header>
+
+<section id="automotive" class="py-5 bg-light"><div class="container">
+<div class="text-center mb-5"><h2>Automotive Dealerships</h2><div class="title-line"></div><p class="text-muted">Explore our premium multi-brand commercial vehicle ecosystems.</p></div>
+<div class="ex-gallery-grid">
+<div class="gallery-card"><img src="images/hero-gallery-1.jpg" alt="Berkshire Group showroom" onerror="this.onerror=null;this.src='images/hero-properties.jpg'"><div class="card-overlay"><h5>Showrooms</h5></div></div>
+<div class="gallery-card"><img src="images/hero-gallery-2.jpg" alt="Automotive service center" onerror="this.onerror=null;this.src='images/hero-gallery-1.jpg'"><div class="card-overlay"><h5>Service Centers</h5></div></div>
+<div class="gallery-card"><img src="images/hero-gallery-3.jpg" alt="Fleet logistics" onerror="this.onerror=null;this.src='images/hero-gallery-1.jpg'"><div class="card-overlay"><h5>Fleet Logistics</h5></div></div>
+<div class="gallery-card"><img src="images/hero-gallery-4.jpg" alt="Premium vehicles" onerror="this.onerror=null;this.src='images/hero-gallery-1.jpg'"><div class="card-overlay"><h5>Premium Vehicles</h5></div></div>
+</div></div></section>
+
+<section id="real-estate" class="py-5"><div class="container">
+<div class="text-center mb-5"><h2>Real Estate Operations</h2><div class="title-line"></div><p class="text-muted">We build, manage, and lease state-of-the-art commercial hubs and residential residences.</p></div>
+<div class="ex-gallery-grid">
+<div class="gallery-card"><img src="images/real-estate-1.jpg" alt="Commercial property" onerror="this.onerror=null;this.src='images/hero-properties.jpg'"><div class="card-overlay"><h5>Commercial Hubs</h5></div></div>
+<div class="gallery-card"><img src="images/real-estate-2.jpg" alt="Residential property" onerror="this.onerror=null;this.src='images/real-estate-1.jpg'"><div class="card-overlay"><h5>Residential Spaces</h5></div></div>
+<div class="gallery-card"><img src="images/real-estate-3.jpg" alt="Property management" onerror="this.onerror=null;this.src='images/real-estate-1.jpg'"><div class="card-overlay"><h5>Property Management</h5></div></div>
+<div class="gallery-card"><img src="images/real-estate-4.jpg" alt="Development strategy" onerror="this.onerror=null;this.src='images/real-estate-3.jpg'"><div class="card-overlay"><h5>Development Strategy</h5></div></div>
+</div></div></section>
+
+<section id="about-us" class="py-5 bg-light"><div class="container">
+<div class="text-center mb-5"><h2>About Berkshire Group</h2><div class="title-line"></div><p class="text-muted">Our core foundational pillars guiding cross-industry excellence.</p></div>
+<div class="ex-gallery-grid">
+<div class="about-card"><img src="images/imagesabout1.jpg" alt="Our Vision" onerror="this.onerror=null;this.src='images/real-estate-1.jpg'"><div class="about-card-content"><h5>Our Vision</h5><p>Setting the modern benchmark for premium asset management and partnerships.</p></div></div>
+<div class="about-card"><img src="images/imagesabout2.jpg" alt="Integrity First" onerror="this.onerror=null;this.src='images/real-estate-2.jpg'"><div class="about-card-content"><h5>Integrity First</h5><p>Building long-term retail and residential value through transparent workflows.</p></div></div>
+<div class="about-card"><img src="images/imagesabout3.jpg" alt="Operational Focus" onerror="this.onerror=null;this.src='images/real-estate-3.jpg'"><div class="about-card-content"><h5>Operational Focus</h5><p>Delivering consistent engineering, support, and infrastructure management pipelines.</p></div></div>
+</div></div></section>
+
+<section id="contact" class="py-5 bg-dark"><div class="container"><div class="split-layout">
+<div class="split-col"><h2>Get In Touch</h2><div class="title-line"></div><p>Reach out to discover investment openings, corporate vehicle pricing structures, or available commercial leasing spaces.</p>
+<ul class="contact-list"><li><strong>Email:</strong> info@berkshiregroup.com</li><li><strong>Phone:</strong> +1 (555) 019-2834</li><li><strong>Headquarters:</strong> 100 Corporate Parkway, Suite 500</li></ul></div>
+<div class="split-col"><form action="#" method="POST">
+<div class="form-row"><div class="form-col"><label class="form-label">First Name</label><input type="text" class="form-control" required></div><div class="form-col"><label class="form-label">Last Name</label><input type="text" class="form-control"></div></div>
+<div class="form-group"><label class="form-label">Email</label><input type="email" class="form-control" required></div>
+<div class="form-group"><label class="form-label">Message</label><textarea class="form-control" rows="5"></textarea></div>
+<button type="submit" class="btn-light">Send Inquiry</button>
+</form></div>
+</div></div></section>
+<footer><div class="container"><p>&copy; 2026 Berkshire Group. All rights reserved.</p></div></footer>
 </body>
 </html>
