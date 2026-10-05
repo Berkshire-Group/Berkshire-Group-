@@ -1,664 +1,784 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Berkshire Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkshire Group</title>
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    scroll-behavior:smooth;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-body{
-    background:#fff;
-    color:#212529;
-    line-height:1.5;
-}
+        body {
+            background-color: #ffffff;
+            color: #212529;
+            line-height: 1.5;
+            margin: 0;
+        }
 
-.container{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
-}
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.py-5{padding:60px 0}
-.bg-light{background:#f8f9fa}
-.bg-dark{background:#212529;color:#fff}
-.text-center{text-align:center}
-.mb-5{margin-bottom:35px}
+        .py-5 {
+            padding: 60px 0;
+        }
 
-.title-line{
-    width:50px;
-    height:3px;
-    background:#212529;
-    margin:10px auto 15px;
-}
+        .bg-light {
+            background-color: #f8f9fa;
+        }
 
-.bg-dark .title-line{background:#fff}
-.text-muted{color:#6c757d}
+        .bg-dark {
+            background-color: #212529;
+            color: #ffffff;
+        }
 
-/* NAVIGATION */
-.nav-header{
-    background:#fff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    padding:15px 0;
-}
+        .text-center {
+            text-align: center;
+        }
 
-.nav-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        .mb-5 {
+            margin-bottom: 35px;
+        }
 
-.logo{
-    color:#212529;
-    font-size:1.25rem;
-    font-weight:700;
-    text-decoration:none;
-}
+        .title-line {
+            width: 50px;
+            height: 3px;
+            background-color: #212529;
+            margin: 10px auto 15px auto;
+        }
 
-.nav-menu{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
+        .bg-dark .title-line {
+            background-color: #ffffff;
+        }
 
-.nav-menu a{
-    color:#495057;
-    font-weight:600;
-    text-decoration:none;
-    font-size:.95rem;
-}
+        .text-muted {
+            color: #6c757d;
+        }
 
-/* HERO */
-.hero-section{
-    background:
-        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-        url("images/hero-gallery-1.jpg")
-        center center/cover no-repeat;
+        /* NAVIGATION */
+        header.nav-header {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+        }
 
-    min-height:50vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    padding:40px 20px;
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.hero-title{
-    font-size:2.5rem;
-    font-weight:700;
-    margin-bottom:15px;
-}
+        .logo-fallback {
+            color: #212529;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-.hero-subtitle{
-    font-size:1.1rem;
-    max-width:700px;
-    margin:0 auto 25px;
-}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
 
-.btn-pill{
-    display:inline-block;
-    padding:10px 25px;
-    border:2px solid #fff;
-    color:#fff;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-}
+        .nav-link-custom {
+            color: #495057;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
 
-/* GALLERIES */
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
+        .nav-link-custom:hover {
+            color: #000000;
+        }
 
-.gallery-card{
-    position:relative;
-    height:220px;
-    background:#495057 center/cover no-repeat;
-    border-radius:6px;
-    overflow:hidden;
-}
+        /* HERO */
+        .hero-section {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url('images/hero-gallery-1.jpg')
+                no-repeat center center / cover;
 
-.card-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.85)
-    );
-    padding:20px;
-    display:flex;
-    align-items:flex-end;
-}
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
 
-.card-overlay h5{
-    font-size:1.2rem;
-    color:#fff;
-    font-weight:700;
-}
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-/* ABOUT */
-.about-card{
-    height:240px;
-    background:#495057 center/cover no-repeat;
-    border-radius:6px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:flex-end;
-    padding:25px 20px;
-}
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
 
-.about-card:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.85)
-    );
-}
+        .btn-pill {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
 
-.about-card-content{
-    position:relative;
-    z-index:2;
-    color:#fff;
-}
+        .btn-pill:hover {
+            background-color: #ffffff;
+            color: #212529;
+        }
 
-.about-card h5{
-    font-size:1.2rem;
-    margin-bottom:8px;
-}
+        /* GALLERY */
+        .ex-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
 
-.about-card p{
-    font-size:.85rem;
-    color:#e9ecef;
-}
+        .gallery-card {
+            position: relative;
+            height: 220px;
+            background-color: #495057;
+            background-position: center;
+            background-size: cover;
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
 
-/* CONTACT */
-.split-layout{
-    display:flex;
-    flex-wrap:wrap;
-    gap:40px;
-}
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.85)
+            );
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+        }
 
-.split-col{
-    flex:1 1 450px;
-    min-width:300px;
-}
+        .card-overlay h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
 
-.contact-list{
-    list-style:none;
-    margin-top:20px;
-}
+        /* ABOUT */
+        .about-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px 20px;
+            height: 240px;
+            background-color: #495057;
+            border-radius: 6px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
 
-.contact-list li{
-    margin-bottom:12px;
-    color:#a8aeb4;
-}
+        .about-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.8)
+            );
+        }
 
-.form-row{
-    display:flex;
-    gap:15px;
-    margin-bottom:15px;
-    flex-wrap:wrap;
-}
+        .about-card-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
 
-.form-col{
-    flex:1 1 200px;
-}
+        .about-card h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-.form-group{
-    margin-bottom:15px;
-}
+        .about-card p {
+            font-size: 0.85rem;
+            color: #e9ecef;
+        }
 
-.form-label{
-    display:block;
-    font-size:.85rem;
-    color:#a8aeb4;
-    margin-bottom:5px;
-}
+        /* CONTACT */
+        .split-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
 
-.form-control{
-    width:100%;
-    padding:10px;
-    background:transparent;
-    border:1px solid #495057;
-    color:#fff;
-    border-radius:4px;
-}
+        .split-col {
+            flex: 1 1 450px;
+            min-width: 300px;
+        }
 
-.btn-light{
-    background:#fff;
-    color:#212529;
-    padding:12px 30px;
-    border:0;
-    border-radius:50px;
-    cursor:pointer;
-    font-weight:600;
-}
+        .contact-list {
+            list-style: none;
+            margin-top: 20px;
+        }
 
-/* FOOTER */
-footer{
-    background:#000;
-    color:#6c757d;
-    padding:30px 0;
-    text-align:center;
-}
+        .contact-list li {
+            margin-bottom: 12px;
+            color: #a8aeb4;
+        }
 
-/* MOBILE */
-@media(max-width:700px){
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
 
-    .nav-container{
-        flex-direction:column;
-        gap:12px;
-    }
+        .form-col {
+            flex: 1 1 200px;
+        }
 
-    .nav-menu{
-        gap:12px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-    .nav-menu a{
-        font-size:.8rem;
-    }
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #a8aeb4;
+            margin-bottom: 5px;
+        }
 
-    .hero-title{
-        font-size:2rem;
-    }
-}
-</style>
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid #495057;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ffffff;
+        }
+
+        .btn-light {
+            background-color: #ffffff;
+            color: #212529;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-light:hover {
+            background-color: #e9ecef;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000000;
+            color: #6c757d;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .py-5 {
+                padding: 45px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<header class="nav-header">
-<div class="container nav-container">
+    <!-- STICKY NAVIGATION BAR -->
+    <header class="nav-header">
+        <div class="container nav-container">
 
-<a href="#" class="logo">
-Berkshire Group
-</a>
+            <a href="#" class="logo-fallback">
+                <span id="brand-text">Berkshire Group</span>
+            </a>
 
-<ul class="nav-menu">
-<li><a href="#automotive">Automotive</a></li>
-<li><a href="#real-estate">Real Estate</a></li>
-<li><a href="#about-us">About Us</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+            <ul class="nav-menu">
+                <li>
+                    <a class="nav-link-custom" href="#automotive">
+                        Automotive
+                    </a>
+                </li>
 
-</div>
-</header>
+                <li>
+                    <a class="nav-link-custom" href="#real-estate">
+                        Real Estate
+                    </a>
+                </li>
 
+                <li>
+                    <a class="nav-link-custom" href="#about-us">
+                        About Us
+                    </a>
+                </li>
 
-<!-- HERO -->
-<header class="hero-section">
+                <li>
+                    <a class="nav-link-custom" href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
 
-<div>
+        </div>
+    </header>
 
-<h1 class="hero-title">
-Welcome to Berkshire Group
-</h1>
 
-<p class="hero-subtitle">
-Driving excellence across premium automotive networks and exceptional real estate solutions.
-</p>
+    <!-- HERO DISPLAY -->
+    <header class="hero-section">
 
-<a href="#contact" class="btn-pill">
-Get In Touch
-</a>
+        <div>
 
-</div>
+            <h1 class="hero-title">
+                Welcome to Berkshire Group
+            </h1>
 
-</header>
+            <p class="hero-subtitle">
+                Driving excellence across premium automotive networks
+                and exceptional real estate solutions.
+            </p>
 
+            <a href="#contact" class="btn-pill">
+                Get In Touch
+            </a>
 
-<!-- AUTOMOTIVE -->
-<section id="automotive" class="py-5 bg-light">
+        </div>
 
-<div class="container">
+    </header>
 
-<div class="text-center mb-5">
 
-<h2>Automotive Dealerships</h2>
+    <!-- AUTOMOTIVE PORTFOLIO -->
+    <section id="automotive" class="py-5 bg-light">
 
-<div class="title-line"></div>
+        <div class="container">
 
-<p class="text-muted">
-Explore our premium multi-brand commercial vehicle ecosystems.
-</p>
+            <div class="text-center mb-5">
 
-</div>
+                <h2>
+                    Automotive Dealerships
+                </h2>
 
+                <div class="title-line"></div>
 
-<div class="gallery-grid">
+                <p class="text-muted">
+                    Explore our premium multi-brand commercial vehicle ecosystems.
+                </p>
 
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-1.jpg');">
+            </div>
 
-<div class="card-overlay">
-<h5>Showrooms</h5>
-</div>
 
-</div>
+            <div class="ex-gallery-grid">
 
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/hero-gallery-1.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Showrooms</h5>
+                    </div>
+                </div>
 
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-2.jpg');">
 
-<div class="card-overlay">
-<h5>Service Centers</h5>
-</div>
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/hero-gallery-2.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Service Centers</h5>
+                    </div>
+                </div>
 
-</div>
 
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/hero-gallery-3.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Fleet Logistics</h5>
+                    </div>
+                </div>
 
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-3.jpg');">
 
-<div class="card-overlay">
-<h5>Fleet Logistics</h5>
-</div>
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/hero-gallery-4.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Premium Vehicles</h5>
+                    </div>
+                </div>
 
-</div>
+            </div>
 
+        </div>
 
-<div class="gallery-card"
-style="background-image:url('images/hero-gallery-4.jpg');">
+    </section>
 
-<div class="card-overlay">
-<h5>Premium Vehicles</h5>
-</div>
 
-</div>
+    <!-- REAL ESTATE OPERATIONS -->
+    <section id="real-estate" class="py-5">
 
-</div>
-</div>
+        <div class="container">
 
-</section>
+            <div class="text-center mb-5">
 
+                <h2>
+                    Real Estate Operations
+                </h2>
 
-<!-- REAL ESTATE -->
-<section id="real-estate" class="py-5">
+                <div class="title-line"></div>
 
-<div class="container">
+                <p class="text-muted">
+                    We build, manage, and lease state-of-the-art
+                    commercial hubs and residential residences.
+                </p>
 
-<div class="text-center mb-5">
+            </div>
 
-<h2>Real Estate Operations</h2>
 
-<div class="title-line"></div>
+            <div class="ex-gallery-grid">
 
-<p class="text-muted">
-We build, manage, and lease state-of-the-art commercial hubs and residential residences.
-</p>
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/real-estate-1.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Commercial Hubs</h5>
+                    </div>
+                </div>
 
-</div>
 
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/real-estate-2.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Residential Spaces</h5>
+                    </div>
+                </div>
 
-<div class="gallery-grid">
 
-<div class="gallery-card"
-style="background-image:url('images/real-estate-1.jpg');">
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/real-estate-3.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Property Management</h5>
+                    </div>
+                </div>
 
-<div class="card-overlay">
-<h5>Commercial Hubs</h5>
-</div>
 
-</div>
+                <div
+                    class="gallery-card"
+                    style="background-image: url('images/real-estate-4.jpg');"
+                >
+                    <div class="card-overlay">
+                        <h5>Development Strategy</h5>
+                    </div>
+                </div>
 
+            </div>
 
-<div class="gallery-card"
-style="background-image:url('images/real-estate-2.jpg');">
+        </div>
 
-<div class="card-overlay">
-<h5>Residential Spaces</h5>
-</div>
+    </section>
 
-</div>
 
+    <!-- ABOUT SECTION -->
+    <section id="about-us" class="py-5 bg-light">
 
-<div class="gallery-card"
-style="background-image:url('images/real-estate-3.jpg');">
+        <div class="container">
 
-<div class="card-overlay">
-<h5>Property Management</h5>
-</div>
+            <div class="text-center mb-5">
 
-</div>
+                <h2>
+                    About Berkshire Group
+                </h2>
 
+                <div class="title-line"></div>
 
-<div class="gallery-card"
-style="background-image:url('images/real-estate-4.jpg');">
+                <p class="text-muted">
+                    Our core foundational pillars guiding cross-industry excellence.
+                </p>
 
-<div class="card-overlay">
-<h5>Development Strategy</h5>
-</div>
+            </div>
 
-</div>
 
-</div>
-</div>
+            <div class="ex-gallery-grid">
 
-</section>
 
+                <!-- ABOUT IMAGE 1 -->
+                <div
+                    class="about-card"
+                    style="background-image: url('images/imagesabout1.jpg');"
+                >
 
-<!-- ABOUT -->
-<section id="about-us" class="py-5 bg-light">
+                    <div class="about-card-content">
 
-<div class="container">
+                        <h5>
+                            Our Vision
+                        </h5>
 
-<div class="text-center mb-5">
+                        <p>
+                            Setting the modern benchmark for premium
+                            asset management and partnerships.
+                        </p>
 
-<h2>About Berkshire Group</h2>
+                    </div>
 
-<div class="title-line"></div>
+                </div>
 
-<p class="text-muted">
-Our core foundational pillars guiding cross-industry excellence.
-</p>
 
-</div>
+                <!-- ABOUT IMAGE 2 -->
+                <div
+                    class="about-card"
+                    style="background-image: url('images/imagesabout2.jpg');"
+                >
 
+                    <div class="about-card-content">
 
-<div class="gallery-grid">
+                        <h5>
+                            Integrity First
+                        </h5>
 
-<div class="about-card"
-style="background-image:url('images/about-1.jpg');">
+                        <p>
+                            Building long-term retail and residential
+                            value through transparent workflows.
+                        </p>
 
-<div class="about-card-content">
+                    </div>
 
-<h5>Our Vision</h5>
+                </div>
 
-<p>
-Setting the modern benchmark for premium asset management and partnerships.
-</p>
 
-</div>
-</div>
+                <!-- ABOUT IMAGE 3 -->
+                <div
+                    class="about-card"
+                    style="background-image: url('images/imagesabout3.jpg');"
+                >
 
+                    <div class="about-card-content">
 
-<div class="about-card"
-style="background-image:url('images/about-2.jpg');">
+                        <h5>
+                            Operational Focus
+                        </h5>
 
-<div class="about-card-content">
+                        <p>
+                            Delivering consistent engineering, support,
+                            and infrastructure management pipelines.
+                        </p>
 
-<h5>Integrity First</h5>
+                    </div>
 
-<p>
-Building long-term retail and residential value through transparent workflows.
-</p>
+                </div>
 
-</div>
-</div>
 
+            </div>
 
-<div class="about-card"
-style="background-image:url('images/about-3.jpg');">
+        </div>
 
-<div class="about-card-content">
+    </section>
 
-<h5>Operational Focus</h5>
 
-<p>
-Delivering consistent engineering, support, and infrastructure management pipelines.
-</p>
+    <!-- CONTACT INQUIRY SECTION -->
+    <section id="contact" class="py-5 bg-dark">
 
-</div>
-</div>
+        <div class="container">
 
-</div>
-</div>
+            <div class="split-layout">
 
-</section>
 
+                <!-- CONTACT INFORMATION -->
+                <div class="split-col">
 
-<!-- CONTACT -->
-<section id="contact" class="py-5 bg-dark">
+                    <h2>
+                        Get In Touch
+                    </h2>
 
-<div class="container">
+                    <div class="title-line"></div>
 
-<div class="split-layout">
+                    <p>
+                        Reach out to discover investment openings,
+                        corporate vehicle pricing structures, or
+                        available commercial leasing spaces.
+                    </p>
 
 
-<div class="split-col">
+                    <ul class="contact-list">
 
-<h2>Get In Touch</h2>
+                        <li>
+                            <strong>Email:</strong>
+                            info@berkshiregroup.com
+                        </li>
 
-<div class="title-line"></div>
+                        <li>
+                            <strong>Phone:</strong>
+                            +1 (555) 019-2834
+                        </li>
 
-<p>
-Reach out to discover investment openings,
-corporate vehicle pricing structures,
-or available commercial leasing spaces.
-</p>
+                        <li>
+                            <strong>Headquarters:</strong>
+                            100 Corporate Parkway, Suite 500
+                        </li>
 
-<ul class="contact-list">
+                    </ul>
 
-<li>
-<strong>Email:</strong>
-info@berkshiregroup.com
-</li>
+                </div>
 
-<li>
-<strong>Phone:</strong>
-+1 (555) 019-2834
-</li>
 
-<li>
-<strong>Headquarters:</strong>
-100 Corporate Parkway, Suite 500
-</li>
+                <!-- CONTACT FORM -->
+                <div class="split-col">
 
-</ul>
+                    <form action="#" method="POST">
 
-</div>
+                        <div class="form-row">
 
+                            <div class="form-col">
 
-<div class="split-col">
+                                <label class="form-label">
+                                    First Name
+                                </label>
 
-<form>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    required
+                                >
 
-<div class="form-row">
+                            </div>
 
-<div class="form-col">
 
-<label class="form-label">
-First Name
-</label>
+                            <div class="form-col">
 
-<input
-type="text"
-class="form-control"
-required>
+                                <label class="form-label">
+                                    Last Name
+                                </label>
 
-</div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                >
 
+                            </div>
 
-<div class="form-col">
+                        </div>
 
-<label class="form-label">
-Last Name
-</label>
 
-<input
-type="text"
-class="form-control">
+                        <div class="form-group">
 
-</div>
+                            <label class="form-label">
+                                Email
+                            </label>
 
-</div>
+                            <input
+                                type="email"
+                                class="form-control"
+                                required
+                            >
 
+                        </div>
 
-<div class="form-group">
 
-<label class="form-label">
-Email
-</label>
+                        <div class="form-group">
 
-<input
-type="email"
-class="form-control"
-required>
+                            <label class="form-label">
+                                Message
+                            </label>
 
-</div>
+                            <textarea
+                                class="form-control"
+                                rows="5"
+                            ></textarea>
 
+                        </div>
 
-<div class="form-group">
 
-<label class="form-label">
-Message
-</label>
+                        <button
+                            type="submit"
+                            class="btn-light"
+                        >
+                            Send Inquiry
+                        </button>
 
-<textarea
-class="form-control"
-rows="5">
-</textarea>
+                    </form>
 
-</div>
+                </div>
 
+            </div>
 
-<button type="submit" class="btn-light">
-Send Inquiry
-</button>
+        </div>
 
-</form>
+    </section>
 
-</div>
 
-</div>
+    <!-- FOOTER -->
+    <footer>
 
-</div>
+        <div class="container">
 
-</section>
+            <p>
+                &copy; 2026 Berkshire Group. All rights reserved.
+            </p>
 
+        </div>
 
-<!-- FOOTER -->
-<footer>
-
-<div class="container">
-
-<p>
-&copy; 2026 Berkshire Group. All rights reserved.
-</p>
-
-</div>
-
-</footer>
+    </footer>
 
 </body>
 </html>
+```
