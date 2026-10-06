@@ -362,12 +362,13 @@
             text-decoration: underline;
         }
 
+        /* EMPLOYMENT APPLICATION */
         .employment-form-wrap {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 45px auto 0 auto;
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 35px;
+            background: #ffffff;
+            border: 1px solid #cfcfcf;
+            padding: 18px;
         }
 
         .employment-form-wrap.hidden {
@@ -375,21 +376,186 @@
         }
 
         .employment-form-wrap h3 {
-            margin-bottom: 8px;
+            text-align: center;
+            font-size: 1.65rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        .employment-form-wrap .form-label {
-            color: #495057;
-        }
-
-        .employment-form-wrap .form-control {
+        .employment-paper {
+            border: 1px solid #222;
             background: #ffffff;
-            color: #212529;
-            border-color: #ced4da;
+            color: #111111;
         }
 
-        .employment-form-wrap select.form-control {
-            appearance: auto;
+        .employment-paper * {
+            color: #111111;
+        }
+
+        .employment-form-title {
+            background: #0b4aa2;
+            color: #ffffff !important;
+            text-align: center;
+            font-weight: 700;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .employment-form-note {
+            background: #dedede;
+            text-align: center;
+            font-weight: 700;
+            padding: 7px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .employment-form-row {
+            display: grid;
+            border-bottom: 1px solid #222;
+            min-height: 40px;
+        }
+
+        .employment-form-row.two {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .employment-form-row.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .employment-form-row.four {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .employment-form-row.five {
+            grid-template-columns: 1fr 1.25fr 1.25fr 1fr 0.8fr;
+        }
+
+        .employment-form-cell {
+            padding: 6px 8px;
+            border-right: 1px solid #222;
+        }
+
+        .employment-form-cell:last-child {
+            border-right: none;
+        }
+
+        .employment-form-cell label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .employment-paper input,
+        .employment-paper select,
+        .employment-paper textarea {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: #ffffff;
+            color: #111111;
+            padding: 3px 2px;
+            font-size: 0.9rem;
+        }
+
+        .employment-paper input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .employment-section-title {
+            background: #0b4aa2;
+            color: #ffffff !important;
+            text-align: center;
+            font-weight: 700;
+            padding: 7px;
+            border-bottom: 1px solid #222;
+            text-transform: uppercase;
+        }
+
+        .employment-education-head,
+        .employment-education-row {
+            display: grid;
+            grid-template-columns:
+                1.05fr
+                1.1fr
+                1.45fr
+                0.75fr
+                0.75fr;
+        }
+
+        .employment-education-head div {
+            background: #dedede;
+            font-weight: 700;
+            text-align: center;
+            padding: 7px 4px;
+            border-right: 1px solid #222;
+        }
+
+        .employment-education-head div:last-child,
+        .employment-education-row div:last-child {
+            border-right: none;
+        }
+
+        .employment-education-row {
+            min-height: 38px;
+            border-top: 1px solid #222;
+        }
+
+        .employment-education-row div {
+            border-right: 1px solid #222;
+            padding: 3px;
+        }
+
+        .employment-education-row label {
+            display: block;
+            font-weight: 700;
+            background: #dedede;
+            padding: 4px 7px;
+            margin: -3px;
+        }
+
+        .employment-days {
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        .employment-days span {
+            display: inline-block;
+            min-width: 43%;
+        }
+
+        .employment-checks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .employment-id-box {
+            padding: 12px;
+            border-top: 1px solid #222;
+            background: #fafafa;
+        }
+
+        .employment-id-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .employment-upload {
+            border: 1px dashed #777;
+            padding: 12px;
+            background: #ffffff;
+        }
+
+        .employment-submit {
+            text-align: center;
+            padding: 20px 0 5px;
         }
 
         .employment-form-wrap .btn-dark {
@@ -397,9 +563,39 @@
             color: #ffffff;
             padding: 12px 30px;
             border: none;
-            border-radius: 50px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .employment-form-row.two,
+            .employment-form-row.three,
+            .employment-form-row.four,
+            .employment-form-row.five,
+            .employment-id-grid,
+            .employment-education-head,
+            .employment-education-row {
+                grid-template-columns: 1fr;
+            }
+
+            .employment-form-cell {
+                border-right: none;
+                border-bottom: 1px solid #222;
+            }
+
+            .employment-education-head {
+                display: none;
+            }
+
+            .employment-education-row {
+                border-top: 0;
+            }
+
+            .employment-education-row div {
+                border-right: 0;
+                border-bottom: 1px solid #222;
+            }
         }
 
         /* FOOTER */
@@ -427,7 +623,7 @@
 
 <body>
 
-    <!-- STICKY NAVIGATION BAR -->
+    <!-- NAVIGATION -->
     <header class="nav-header">
         <div class="container nav-container">
 
@@ -437,6 +633,7 @@
                     alt="Berkshire Group"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
                 >
+
                 <span
                     id="brand-text"
                     style="display:none; font-size:1.25rem; font-weight:700;"
@@ -446,47 +643,83 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
-                <li><a class="nav-link-custom" href="#real-estate">Real Estate</a></li>
-                <li><a class="nav-link-custom" href="#about-us">About Us</a></li>
-                <li><a class="nav-link-custom" href="#employment">Employment</a></li>
-                <li><a class="nav-link-custom" href="#contact">Contact</a></li>
+                <li>
+                    <a class="nav-link-custom" href="#automotive">
+                        Automotive
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link-custom" href="#real-estate">
+                        Real Estate
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link-custom" href="#about-us">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link-custom" href="#employment">
+                        Employment
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link-custom" href="#contact">
+                        Contact
+                    </a>
+                </li>
             </ul>
 
         </div>
     </header>
 
 
-    <!-- HERO DISPLAY -->
+    <!-- HERO -->
     <header class="hero-section">
+
         <div>
+
             <h1 class="hero-title">
                 Welcome to Berkshire Group
             </h1>
 
             <p class="hero-subtitle">
-                Driving excellence across premium automotive networks and exceptional real estate solutions.
+                Driving excellence across premium automotive networks
+                and exceptional real estate solutions.
             </p>
 
             <a href="#contact" class="btn-pill">
                 Get In Touch
             </a>
+
         </div>
+
     </header>
 
 
-    <!-- AUTOMOTIVE PORTFOLIO -->
+    <!-- AUTOMOTIVE -->
     <section id="automotive" class="py-5 bg-light">
+
         <div class="container">
 
             <div class="text-center mb-5">
-                <h2>Automotive Dealerships</h2>
+
+                <h2>
+                    Automotive Dealerships
+                </h2>
+
                 <div class="title-line"></div>
 
                 <p class="text-muted">
                     Explore our premium multi-brand commercial vehicle ecosystems.
                 </p>
+
             </div>
+
 
             <div class="ex-gallery-grid">
 
@@ -527,22 +760,32 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- REAL ESTATE OPERATIONS -->
+    <!-- REAL ESTATE -->
     <section id="real-estate" class="py-5">
+
         <div class="container">
 
             <div class="text-center mb-5">
-                <h2>Real Estate Operations</h2>
+
+                <h2>
+                    Real Estate Operations
+                </h2>
+
                 <div class="title-line"></div>
 
                 <p class="text-muted">
-                    We build, manage, and lease state-of-the-art commercial hubs and residential residences.
+                    We build, manage, and lease state-of-the-art
+                    commercial hubs and residential residences.
                 </p>
+
             </div>
+
 
             <div class="ex-gallery-grid">
 
@@ -583,22 +826,31 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about-us" class="py-5 bg-light">
+
         <div class="container">
 
             <div class="text-center mb-5">
-                <h2>About Berkshire Group</h2>
+
+                <h2>
+                    About Berkshire Group
+                </h2>
+
                 <div class="title-line"></div>
 
                 <p class="text-muted">
                     Our core foundational pillars guiding cross-industry excellence.
                 </p>
+
             </div>
+
 
             <div class="ex-gallery-grid">
 
@@ -606,50 +858,81 @@
                     class="about-card"
                     style="background-image: url('images/imagesabout1.jpg'), url('images/real-estate-1.jpg'); background-repeat: no-repeat;"
                 >
+
                     <div class="about-card-content">
-                        <h5>Our Vision</h5>
+
+                        <h5>
+                            Our Vision
+                        </h5>
+
                         <p>
-                            Setting the modern benchmark for premium asset management and partnerships.
+                            Setting the modern benchmark for premium
+                            asset management and partnerships.
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div
                     class="about-card"
                     style="background-image: url('images/imagesabout2.jpg'), url('images/real-estate-2.jpg'); background-repeat: no-repeat;"
                 >
+
                     <div class="about-card-content">
-                        <h5>Integrity First</h5>
+
+                        <h5>
+                            Integrity First
+                        </h5>
+
                         <p>
-                            Building long-term retail and residential value through transparent workflows.
+                            Building long-term retail and residential
+                            value through transparent workflows.
                         </p>
+
                     </div>
+
                 </div>
+
 
                 <div
                     class="about-card"
                     style="background-image: url('images/imagesabout3.jpg'), url('images/real-estate-3.jpg'); background-repeat: no-repeat;"
                 >
+
                     <div class="about-card-content">
-                        <h5>Operational Focus</h5>
+
+                        <h5>
+                            Operational Focus
+                        </h5>
+
                         <p>
-                            Delivering consistent engineering, support, and infrastructure management pipelines.
+                            Delivering consistent engineering, support,
+                            and infrastructure management pipelines.
                         </p>
+
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
-    <!-- EMPLOYMENT SECTION -->
+    <!-- EMPLOYMENT -->
     <section id="employment" class="py-5">
+
         <div class="container">
 
             <div class="employment-intro">
 
-                <h2>Career Opportunities</h2>
+                <h2>
+                    Career Opportunities
+                </h2>
 
                 <div class="title-line"></div>
 
@@ -662,8 +945,8 @@
                 </p>
 
                 <p class="text-muted">
-                    Explore career opportunities across Berkshire Group's automotive,
-                    real estate, operations, and corporate teams.
+                    Explore career opportunities across Berkshire Group's
+                    automotive, real estate, operations, and corporate teams.
                 </p>
 
             </div>
@@ -697,245 +980,938 @@
             <div class="employment-grid">
 
                 <div class="employment-card">
-                    <h5>Automotive Dealerships</h5>
+
+                    <h5>
+                        Automotive Dealerships
+                    </h5>
 
                     <p>
-                        Sales, service, management, parts, and dealership operations opportunities.
+                        Sales, service, management, parts,
+                        and dealership operations opportunities.
                     </p>
 
-                    <a href="#employment-form" class="view-opportunities">
+                    <a
+                        href="#employment-form"
+                        class="view-opportunities"
+                    >
                         View Opportunities →
                     </a>
+
                 </div>
 
 
                 <div class="employment-card">
-                    <h5>Real Estate</h5>
+
+                    <h5>
+                        Real Estate
+                    </h5>
 
                     <p>
-                        Property management, leasing, development, maintenance,
-                        and real estate operations.
+                        Property management, leasing, development,
+                        maintenance, and real estate operations.
                     </p>
 
-                    <a href="#employment-form" class="view-opportunities">
+                    <a
+                        href="#employment-form"
+                        class="view-opportunities"
+                    >
                         View Opportunities →
                     </a>
+
                 </div>
 
 
                 <div class="employment-card">
-                    <h5>Corporate Team</h5>
+
+                    <h5>
+                        Corporate Team
+                    </h5>
 
                     <p>
-                        Finance, administration, human resources, marketing,
-                        and business support roles.
+                        Finance, administration, human resources,
+                        marketing, and business support roles.
                     </p>
 
-                    <a href="#employment-form" class="view-opportunities">
+                    <a
+                        href="#employment-form"
+                        class="view-opportunities"
+                    >
                         View Opportunities →
                     </a>
+
                 </div>
 
 
                 <div class="employment-card">
-                    <h5>Management & Operations</h5>
+
+                    <h5>
+                        Management &amp; Operations
+                    </h5>
 
                     <p>
-                        Leadership and operational positions supporting Berkshire Group's growing portfolio.
+                        Leadership and operational positions supporting
+                        Berkshire Group's growing portfolio.
                     </p>
 
-                    <a href="#employment-form" class="view-opportunities">
+                    <a
+                        href="#employment-form"
+                        class="view-opportunities"
+                    >
                         View Opportunities →
                     </a>
+
                 </div>
 
             </div>
 
 
-            <!-- EMPLOYMENT APPLICATION FORM -->
-            <div class="employment-form-wrap hidden" id="employment-form">
+            <!-- APPLICATION FORM -->
+            <div
+                class="employment-form-wrap hidden"
+                id="employment-form"
+            >
 
-                <h3>Employment Application</h3>
-
-                <p class="text-muted">
-                    Select the area you are interested in and tell us about yourself.
-                    Our team can review your application and contact you about suitable opportunities.
-                </p>
+                <h3>
+                    Employment Application Form
+                </h3>
 
 
-                <form action="#" method="POST">
+                <div class="employment-paper">
 
-                    <div class="form-row">
+                    <div class="employment-form-title">
+                        Please complete all information requested
+                    </div>
 
-                        <div class="form-col">
-                            <label class="form-label">
-                                First Name
-                            </label>
+                    <div class="employment-form-note">
+                        NOTE: APPLICANTS MAY BE TESTED FOR ILLEGAL DRUGS
+                    </div>
 
-                            <input
-                                type="text"
-                                name="first_name"
-                                class="form-control"
-                                required
-                            >
+
+                    <form
+                        action="#"
+                        method="POST"
+                        enctype="multipart/form-data"
+                    >
+
+                        <!-- DATE -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Date:
+                                </label>
+
+                                <input
+                                    type="date"
+                                    name="application_date"
+                                >
+
+                            </div>
+
                         </div>
 
 
-                        <div class="form-col">
-                            <label class="form-label">
-                                Last Name
-                            </label>
+                        <!-- NAME -->
+                        <div class="employment-form-row">
 
-                            <input
-                                type="text"
-                                name="last_name"
-                                class="form-control"
-                                required
-                            >
-                        </div>
+                            <div class="employment-form-cell">
 
-                    </div>
+                                <label>
+                                    Name:
+                                </label>
 
+                            </div>
 
-                    <div class="form-row">
-
-                        <div class="form-col">
-                            <label class="form-label">
-                                Email
-                            </label>
-
-                            <input
-                                type="email"
-                                name="email"
-                                class="form-control"
-                                required
-                            >
                         </div>
 
 
-                        <div class="form-col">
-                            <label class="form-label">
-                                Phone
-                            </label>
+                        <div class="employment-form-row four">
 
-                            <input
-                                type="tel"
-                                name="phone"
-                                class="form-control"
-                            >
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Last
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    First
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="first_name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Middle
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="middle_name"
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Maiden
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="maiden_name"
+                                >
+
+                            </div>
+
                         </div>
 
-                    </div>
+
+                        <!-- ADDRESS -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Present Address:
+                                </label>
+
+                            </div>
+
+                        </div>
 
 
-                    <div class="form-group">
+                        <div class="employment-form-row five">
 
-                        <label class="form-label">
-                            Employment Opportunity
-                        </label>
+                            <div class="employment-form-cell">
 
-                        <select
-                            name="employment_category"
-                            class="form-control"
-                            required
-                        >
-                            <option value="">
-                                Select an opportunity
-                            </option>
+                                <label>
+                                    Number
+                                </label>
 
-                            <option value="Automotive Dealerships">
-                                Automotive Dealerships
-                            </option>
+                                <input
+                                    type="text"
+                                    name="address_number"
+                                >
 
-                            <option value="Real Estate">
-                                Real Estate
-                            </option>
-
-                            <option value="Corporate Team">
-                                Corporate Team
-                            </option>
-
-                            <option value="Management & Operations">
-                                Management & Operations
-                            </option>
-
-                        </select>
-
-                    </div>
+                            </div>
 
 
-                    <div class="form-group">
+                            <div class="employment-form-cell">
 
-                        <label class="form-label">
-                            Position / Role of Interest
-                        </label>
+                                <label>
+                                    Street
+                                </label>
 
-                        <input
-                            type="text"
-                            name="position"
-                            class="form-control"
-                            placeholder="e.g. Sales Manager, Property Manager, Accountant"
-                        >
+                                <input
+                                    type="text"
+                                    name="street"
+                                >
 
-                    </div>
+                            </div>
 
 
-                    <div class="form-group">
+                            <div class="employment-form-cell">
 
-                        <label class="form-label">
-                            Tell Us About Yourself
-                        </label>
+                                <label>
+                                    City
+                                </label>
 
-                        <textarea
-                            name="message"
-                            class="form-control"
-                            rows="6"
-                            placeholder="Briefly describe your experience, skills, and the opportunity you are seeking."
-                        ></textarea>
+                                <input
+                                    type="text"
+                                    name="city"
+                                >
 
-                    </div>
+                            </div>
 
 
-                    <button type="submit" class="btn-dark">
-                        Submit Employment Application
-                    </button>
+                            <div class="employment-form-cell">
 
-                </form>
+                                <label>
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="state"
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Zip
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="zip"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="employment-form-row two">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    How Long:
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="address_duration"
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Social Security No.:
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="social_security_number"
+                                    inputmode="numeric"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TELEPHONE -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Telephone:
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    name="telephone"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AGE -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    If under 18, please list age:
+                                </label>
+
+                                <input
+                                    type="number"
+                                    name="age_under_18"
+                                    min="0"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- POSITION / HOURS -->
+                        <div class="employment-form-row two">
+
+                            <div
+                                class="employment-form-cell"
+                                style="padding:0;"
+                            >
+
+                                <div
+                                    style="padding:6px 8px; border-bottom:1px solid #222;"
+                                >
+
+                                    <label>
+                                        Position Applied For:
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="position_applied_for"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div style="padding:6px 8px;">
+
+                                    <label>
+                                        Salary Desired:
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="salary_desired"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Days/Hours Available to Work:
+                                </label>
+
+                                <div class="employment-days">
+
+                                    No Pref ________ &nbsp;
+                                    Thur ________
+                                    <br>
+
+                                    Mon ________ &nbsp;
+                                    Fri ________
+                                    <br>
+
+                                    Tue ________ &nbsp;
+                                    Sat ________
+                                    <br>
+
+                                    Wed ________ &nbsp;
+                                    Sun ________
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- HOURS / NIGHTS -->
+                        <div class="employment-form-row two">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    How many hours can you work weekly?
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="weekly_hours"
+                                >
+
+                            </div>
+
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Can you work nights?
+                                </label>
+
+                                <select name="work_nights">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option>
+                                        Yes
+                                    </option>
+
+                                    <option>
+                                        No
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMPLOYMENT TYPE -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    Employment Desired:
+                                </label>
+
+                                <div class="employment-checks">
+
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="employment_desired"
+                                            value="full_time"
+                                        >
+                                        FULL-TIME ONLY
+                                    </label>
+
+
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="employment_desired"
+                                            value="part_time"
+                                        >
+                                        PART-TIME ONLY
+                                    </label>
+
+
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="employment_desired"
+                                            value="full_or_part_time"
+                                        >
+                                        FULL- OR PART-TIME
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AVAILABLE DATE -->
+                        <div class="employment-form-row">
+
+                            <div class="employment-form-cell">
+
+                                <label>
+                                    When available for work?
+                                </label>
+
+                                <input
+                                    type="date"
+                                    name="available_date"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EDUCATION -->
+                        <div class="employment-section-title">
+                            Education &amp; Other Information
+                        </div>
+
+
+                        <div class="employment-education-head">
+
+                            <div>
+                                TYPE OF SCHOOL
+                            </div>
+
+                            <div>
+                                NAME OF SCHOOL
+                            </div>
+
+                            <div>
+                                LOCATION
+                                <br>
+                                (Complete mailing address)
+                            </div>
+
+                            <div>
+                                NO. OF YEARS
+                                <br>
+                                COMPLETED
+                            </div>
+
+                            <div>
+                                MAJOR &amp;
+                                <br>
+                                DEGREE
+                            </div>
+
+                        </div>
+
+
+                        <div class="employment-education-row">
+
+                            <div>
+                                <label>
+                                    High School
+                                </label>
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="high_school_name"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="high_school_location"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="high_school_years"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="high_school_degree"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="employment-education-row">
+
+                            <div>
+                                <label>
+                                    College
+                                </label>
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="college_name"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="college_location"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="college_years"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="college_degree"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="employment-education-row">
+
+                            <div>
+                                <label>
+                                    Bus. or Trade School
+                                </label>
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="trade_school_name"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="trade_school_location"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="trade_school_years"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="trade_school_degree"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="employment-education-row">
+
+                            <div>
+                                <label>
+                                    Professional School
+                                </label>
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="professional_school_name"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="professional_school_location"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="professional_school_years"
+                                >
+                            </div>
+
+                            <div>
+                                <input
+                                    type="text"
+                                    name="professional_school_degree"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <!-- DRIVER LICENCE / ID -->
+                        <div class="employment-id-box">
+
+                            <div
+                                class="employment-section-title"
+                                style="margin: -12px -12px 12px -12px;"
+                            >
+                                Driver Licence / ID Information
+                            </div>
+
+
+                            <div class="employment-id-grid">
+
+                                <div>
+
+                                    <label>
+                                        Driver Licence / ID Type
+                                    </label>
+
+                                    <select name="id_type">
+
+                                        <option value="">
+                                            Select ID type
+                                        </option>
+
+                                        <option>
+                                            Driver Licence
+                                        </option>
+
+                                        <option>
+                                            State ID
+                                        </option>
+
+                                        <option>
+                                            Passport
+                                        </option>
+
+                                        <option>
+                                            Other Government ID
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div>
+
+                                    <label>
+                                        Licence / ID Number
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="id_number"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <label>
+                                        Issuing State / Country
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="id_issuing_location"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <label>
+                                        Expiration Date
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        name="id_expiration"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ID UPLOAD -->
+                            <div
+                                class="employment-upload"
+                                style="margin-top: 15px;"
+                            >
+
+                                <label>
+                                    Upload Driver Licence / Government ID — Front
+                                </label>
+
+                                <input
+                                    type="file"
+                                    name="driver_license_id_front"
+                                    accept="image/*,.pdf"
+                                    required
+                                >
+
+
+                                <label style="margin-top: 10px;">
+
+                                    Upload Driver Licence / Government ID — Back
+
+                                </label>
+
+                                <input
+                                    type="file"
+                                    name="driver_license_id_back"
+                                    accept="image/*,.pdf"
+                                    required
+                                >
+
+
+                                <small>
+                                    Please upload a clear image or PDF of both
+                                    the front and back of your ID.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+                        <div class="employment-submit">
+
+                            <button
+                                type="submit"
+                                class="btn-dark"
+                            >
+                                Submit Employment Application
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
 
         </div>
+
     </section>
 
 
     <!-- EMPLOYMENT FORM SCRIPT -->
     <script>
-        document.querySelectorAll('.view-opportunities').forEach(function(link) {
 
-            link.addEventListener('click', function(event) {
+        document
+            .querySelectorAll('.view-opportunities')
+            .forEach(function(link) {
 
-                event.preventDefault();
+                link.addEventListener('click', function(event) {
 
-                var form = document.getElementById('employment-form');
+                    event.preventDefault();
 
-                form.classList.remove('hidden');
+                    var form =
+                        document.getElementById('employment-form');
 
-                setTimeout(function() {
+                    form.classList.remove('hidden');
 
-                    form.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    setTimeout(function() {
 
-                }, 50);
+                        form.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                    }, 50);
+
+                });
 
             });
 
-        });
     </script>
 
 
-    <!-- CONTACT INQUIRY SECTION -->
+    <!-- CONTACT -->
     <section id="contact" class="py-5 bg-dark">
 
         <div class="container">
@@ -944,7 +1920,9 @@
 
                 <div class="split-col">
 
-                    <h2>Get In Touch</h2>
+                    <h2>
+                        Get In Touch
+                    </h2>
 
                     <div class="title-line"></div>
 
@@ -953,6 +1931,7 @@
                         corporate vehicle pricing structures,
                         or available commercial leasing spaces.
                     </p>
+
 
                     <ul class="contact-list">
 
@@ -1042,7 +2021,10 @@
                         </div>
 
 
-                        <button type="submit" class="btn-light">
+                        <button
+                            type="submit"
+                            class="btn-light"
+                        >
                             Send Inquiry
                         </button>
 
@@ -1063,7 +2045,8 @@
         <div class="container">
 
             <p>
-                &copy; 2026 Berkshire Group. All rights reserved.
+                &copy; 2026 Berkshire Group.
+                All rights reserved.
             </p>
 
         </div>
