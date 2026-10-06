@@ -10,7 +10,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -64,10 +64,7 @@
             color: #6c757d;
         }
 
-        /* =========================
-           NAVIGATION
-        ========================= */
-
+        /* NAVIGATION */
         header.nav-header {
             background-color: #ffffff;
             position: sticky;
@@ -111,14 +108,7 @@
             font-size: 0.95rem;
         }
 
-        .nav-link-custom:hover {
-            color: #000000;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
+        /* HERO */
         .hero-section {
             background:
                 linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
@@ -156,15 +146,7 @@
             font-weight: 600;
         }
 
-        .btn-pill:hover {
-            background-color: #ffffff;
-            color: #212529;
-        }
-
-        /* =========================
-           GALLERIES
-        ========================= */
-
+        /* GALLERIES */
         .ex-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -204,10 +186,7 @@
             color: #ffffff;
         }
 
-        /* =========================
-           ABOUT
-        ========================= */
-
+        /* ABOUT */
         .about-card {
             display: flex;
             flex-direction: column;
@@ -239,10 +218,7 @@
             color: #e9ecef;
         }
 
-        /* =========================
-           SPLIT / CONTACT
-        ========================= */
-
+        /* CONTACT */
         .split-layout {
             display: flex;
             flex-wrap: wrap;
@@ -263,10 +239,6 @@
             margin-bottom: 12px;
             color: #a8aeb4;
         }
-
-        /* =========================
-           FORMS
-        ========================= */
 
         .form-row {
             display: flex;
@@ -299,11 +271,6 @@
             border-radius: 4px;
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: #ffffff;
-        }
-
         .btn-light {
             background-color: #ffffff;
             color: #212529;
@@ -314,14 +281,7 @@
             font-weight: 600;
         }
 
-        .btn-light:hover {
-            background-color: #e9ecef;
-        }
-
-        /* =========================
-           EMPLOYMENT
-        ========================= */
-
+        /* EMPLOYMENT */
         .employment-intro {
             text-align: center;
             max-width: 850px;
@@ -359,8 +319,8 @@
             background: #ffffff;
         }
 
-        .employment-tab:hover,
-        .employment-tab.active {
+        .employment-tab.active,
+        .employment-tab:hover {
             background: #212529;
             color: #ffffff;
             border-color: #212529;
@@ -410,6 +370,10 @@
             padding: 35px;
         }
 
+        .employment-form-wrap.hidden {
+            display: none;
+        }
+
         .employment-form-wrap h3 {
             margin-bottom: 8px;
         }
@@ -438,14 +402,7 @@
             font-weight: 600;
         }
 
-        .employment-form-wrap .btn-dark:hover {
-            background: #000000;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
+        /* FOOTER */
         footer {
             background-color: #000000;
             color: #6c757d;
@@ -465,50 +422,12 @@
             color: #6c757d;
             text-decoration: none;
         }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 768px) {
-
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .logo-fallback img {
-                height: 60px;
-                max-width: 280px;
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px 18px;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .employment-form-wrap {
-                padding: 25px 20px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         STICKY NAVIGATION BAR
-    ========================== -->
-
+    <!-- STICKY NAVIGATION BAR -->
     <header class="nav-header">
         <div class="container nav-container">
 
@@ -527,89 +446,47 @@
             </a>
 
             <ul class="nav-menu">
-                <li>
-                    <a class="nav-link-custom" href="#automotive">
-                        Automotive
-                    </a>
-                </li>
-
-                <li>
-                    <a class="nav-link-custom" href="#real-estate">
-                        Real Estate
-                    </a>
-                </li>
-
-                <li>
-                    <a class="nav-link-custom" href="#about-us">
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a class="nav-link-custom" href="#employment">
-                        Employment
-                    </a>
-                </li>
-
-                <li>
-                    <a class="nav-link-custom" href="#contact">
-                        Contact
-                    </a>
-                </li>
+                <li><a class="nav-link-custom" href="#automotive">Automotive</a></li>
+                <li><a class="nav-link-custom" href="#real-estate">Real Estate</a></li>
+                <li><a class="nav-link-custom" href="#about-us">About Us</a></li>
+                <li><a class="nav-link-custom" href="#employment">Employment</a></li>
+                <li><a class="nav-link-custom" href="#contact">Contact</a></li>
             </ul>
 
         </div>
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- HERO DISPLAY -->
     <header class="hero-section">
-
         <div>
-
             <h1 class="hero-title">
                 Welcome to Berkshire Group
             </h1>
 
             <p class="hero-subtitle">
-                Driving excellence across premium automotive networks
-                and exceptional real estate solutions.
+                Driving excellence across premium automotive networks and exceptional real estate solutions.
             </p>
 
             <a href="#contact" class="btn-pill">
                 Get In Touch
             </a>
-
         </div>
-
     </header>
 
 
-    <!-- =========================
-         AUTOMOTIVE PORTFOLIO
-    ========================== -->
-
+    <!-- AUTOMOTIVE PORTFOLIO -->
     <section id="automotive" class="py-5 bg-light">
-
         <div class="container">
 
             <div class="text-center mb-5">
-
-                <h2>
-                    Automotive Dealerships
-                </h2>
-
+                <h2>Automotive Dealerships</h2>
                 <div class="title-line"></div>
 
                 <p class="text-muted">
                     Explore our premium multi-brand commercial vehicle ecosystems.
                 </p>
-
             </div>
-
 
             <div class="ex-gallery-grid">
 
@@ -622,7 +499,6 @@
                     </div>
                 </div>
 
-
                 <div
                     class="gallery-card"
                     style="background-image: url('images/hero-gallery-2.jpg');"
@@ -632,7 +508,6 @@
                     </div>
                 </div>
 
-
                 <div
                     class="gallery-card"
                     style="background-image: url('images/hero-gallery-3.jpg');"
@@ -641,7 +516,6 @@
                         <h5>Fleet Logistics</h5>
                     </div>
                 </div>
-
 
                 <div
                     class="gallery-card"
@@ -653,35 +527,22 @@
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
 
-    <!-- =========================
-         REAL ESTATE
-    ========================== -->
-
+    <!-- REAL ESTATE OPERATIONS -->
     <section id="real-estate" class="py-5">
-
         <div class="container">
 
             <div class="text-center mb-5">
-
-                <h2>
-                    Real Estate Operations
-                </h2>
-
+                <h2>Real Estate Operations</h2>
                 <div class="title-line"></div>
 
                 <p class="text-muted">
-                    We build, manage, and lease state-of-the-art
-                    commercial hubs and residential residences.
+                    We build, manage, and lease state-of-the-art commercial hubs and residential residences.
                 </p>
-
             </div>
-
 
             <div class="ex-gallery-grid">
 
@@ -694,7 +555,6 @@
                     </div>
                 </div>
 
-
                 <div
                     class="gallery-card"
                     style="background-image: url('images/real-estate-2.jpg');"
@@ -703,7 +563,6 @@
                         <h5>Residential Spaces</h5>
                     </div>
                 </div>
-
 
                 <div
                     class="gallery-card"
@@ -714,8 +573,6 @@
                     </div>
                 </div>
 
-
-                <!-- Uses an image that actually exists in the images folder -->
                 <div
                     class="gallery-card"
                     style="background-image: url('images/real-estate-3.jpg');"
@@ -726,128 +583,73 @@
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
+    <!-- ABOUT SECTION -->
     <section id="about-us" class="py-5 bg-light">
-
         <div class="container">
 
             <div class="text-center mb-5">
-
-                <h2>
-                    About Berkshire Group
-                </h2>
-
+                <h2>About Berkshire Group</h2>
                 <div class="title-line"></div>
 
                 <p class="text-muted">
                     Our core foundational pillars guiding cross-industry excellence.
                 </p>
-
             </div>
-
 
             <div class="ex-gallery-grid">
 
                 <div
                     class="about-card"
-                    style="
-                        background-image:
-                        url('images/imagesabout1.jpg'),
-                        url('images/real-estate-1.jpg');
-                        background-repeat: no-repeat;
-                    "
+                    style="background-image: url('images/imagesabout1.jpg'), url('images/real-estate-1.jpg'); background-repeat: no-repeat;"
                 >
                     <div class="about-card-content">
-
-                        <h5>
-                            Our Vision
-                        </h5>
-
+                        <h5>Our Vision</h5>
                         <p>
-                            Setting the modern benchmark for premium
-                            asset management and partnerships.
+                            Setting the modern benchmark for premium asset management and partnerships.
                         </p>
-
                     </div>
                 </div>
 
-
                 <div
                     class="about-card"
-                    style="
-                        background-image:
-                        url('images/imagesabout2.jpg'),
-                        url('images/real-estate-2.jpg');
-                        background-repeat: no-repeat;
-                    "
+                    style="background-image: url('images/imagesabout2.jpg'), url('images/real-estate-2.jpg'); background-repeat: no-repeat;"
                 >
                     <div class="about-card-content">
-
-                        <h5>
-                            Integrity First
-                        </h5>
-
+                        <h5>Integrity First</h5>
                         <p>
-                            Building long-term retail and residential
-                            value through transparent workflows.
+                            Building long-term retail and residential value through transparent workflows.
                         </p>
-
                     </div>
                 </div>
 
-
                 <div
                     class="about-card"
-                    style="
-                        background-image:
-                        url('images/imagesabout3.jpg'),
-                        url('images/real-estate-3.jpg');
-                        background-repeat: no-repeat;
-                    "
+                    style="background-image: url('images/imagesabout3.jpg'), url('images/real-estate-3.jpg'); background-repeat: no-repeat;"
                 >
                     <div class="about-card-content">
-
-                        <h5>
-                            Operational Focus
-                        </h5>
-
+                        <h5>Operational Focus</h5>
                         <p>
-                            Delivering consistent engineering, support,
-                            and infrastructure management pipelines.
+                            Delivering consistent engineering, support, and infrastructure management pipelines.
                         </p>
-
                     </div>
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
 
-    <!-- =========================
-         EMPLOYMENT
-    ========================== -->
-
+    <!-- EMPLOYMENT SECTION -->
     <section id="employment" class="py-5">
-
         <div class="container">
 
             <div class="employment-intro">
 
-                <h2>
-                    Career Opportunities
-                </h2>
+                <h2>Career Opportunities</h2>
 
                 <div class="title-line"></div>
 
@@ -860,8 +662,8 @@
                 </p>
 
                 <p class="text-muted">
-                    Explore career opportunities across Berkshire Group's
-                    automotive, real estate, operations, and corporate teams.
+                    Explore career opportunities across Berkshire Group's automotive,
+                    real estate, operations, and corporate teams.
                 </p>
 
             </div>
@@ -869,38 +671,23 @@
 
             <div class="employment-tabs">
 
-                <a
-                    class="employment-tab active"
-                    href="#employment"
-                >
+                <a class="employment-tab active" href="#employment">
                     All
                 </a>
 
-                <a
-                    class="employment-tab"
-                    href="#employment"
-                >
+                <a class="employment-tab" href="#employment">
                     Automotive
                 </a>
 
-                <a
-                    class="employment-tab"
-                    href="#employment"
-                >
+                <a class="employment-tab" href="#employment">
                     Real Estate
                 </a>
 
-                <a
-                    class="employment-tab"
-                    href="#employment"
-                >
+                <a class="employment-tab" href="#employment">
                     Corporate
                 </a>
 
-                <a
-                    class="employment-tab"
-                    href="#employment"
-                >
+                <a class="employment-tab" href="#employment">
                     Operations
                 </a>
 
@@ -910,94 +697,69 @@
             <div class="employment-grid">
 
                 <div class="employment-card">
-
-                    <h5>
-                        Automotive Dealerships
-                    </h5>
+                    <h5>Automotive Dealerships</h5>
 
                     <p>
-                        Sales, service, management, parts,
-                        and dealership operations opportunities.
+                        Sales, service, management, parts, and dealership operations opportunities.
                     </p>
 
-                    <a href="#employment-form">
+                    <a href="#employment-form" class="view-opportunities">
                         View Opportunities →
                     </a>
-
                 </div>
 
 
                 <div class="employment-card">
-
-                    <h5>
-                        Real Estate
-                    </h5>
+                    <h5>Real Estate</h5>
 
                     <p>
-                        Property management, leasing, development,
-                        maintenance, and real estate operations.
+                        Property management, leasing, development, maintenance,
+                        and real estate operations.
                     </p>
 
-                    <a href="#employment-form">
+                    <a href="#employment-form" class="view-opportunities">
                         View Opportunities →
                     </a>
-
                 </div>
 
 
                 <div class="employment-card">
-
-                    <h5>
-                        Corporate Team
-                    </h5>
+                    <h5>Corporate Team</h5>
 
                     <p>
-                        Finance, administration, human resources,
-                        marketing, and business support roles.
+                        Finance, administration, human resources, marketing,
+                        and business support roles.
                     </p>
 
-                    <a href="#employment-form">
+                    <a href="#employment-form" class="view-opportunities">
                         View Opportunities →
                     </a>
-
                 </div>
 
 
                 <div class="employment-card">
-
-                    <h5>
-                        Management &amp; Operations
-                    </h5>
+                    <h5>Management & Operations</h5>
 
                     <p>
-                        Leadership and operational positions supporting
-                        Berkshire Group's growing portfolio.
+                        Leadership and operational positions supporting Berkshire Group's growing portfolio.
                     </p>
 
-                    <a href="#employment-form">
+                    <a href="#employment-form" class="view-opportunities">
                         View Opportunities →
                     </a>
-
                 </div>
 
             </div>
 
 
             <!-- EMPLOYMENT APPLICATION FORM -->
+            <div class="employment-form-wrap hidden" id="employment-form">
 
-            <div
-                class="employment-form-wrap"
-                id="employment-form"
-            >
-
-                <h3>
-                    Employment Application
-                </h3>
+                <h3>Employment Application</h3>
 
                 <p class="text-muted">
-                    Select the area you are interested in and tell us
-                    about yourself. Our team can review your application
-                    and contact you about suitable opportunities.
+                    Select the area you are interested in and tell us about yourself.
+                    Our team can review your application and contact you about suitable opportunities.
                 </p>
 
 
@@ -1006,7 +768,6 @@
                     <div class="form-row">
 
                         <div class="form-col">
-
                             <label class="form-label">
                                 First Name
                             </label>
@@ -1017,12 +778,10 @@
                                 class="form-control"
                                 required
                             >
-
                         </div>
 
 
                         <div class="form-col">
-
                             <label class="form-label">
                                 Last Name
                             </label>
@@ -1033,7 +792,6 @@
                                 class="form-control"
                                 required
                             >
-
                         </div>
 
                     </div>
@@ -1042,7 +800,6 @@
                     <div class="form-row">
 
                         <div class="form-col">
-
                             <label class="form-label">
                                 Email
                             </label>
@@ -1053,12 +810,10 @@
                                 class="form-control"
                                 required
                             >
-
                         </div>
 
 
                         <div class="form-col">
-
                             <label class="form-label">
                                 Phone
                             </label>
@@ -1068,7 +823,6 @@
                                 name="phone"
                                 class="form-control"
                             >
-
                         </div>
 
                     </div>
@@ -1085,7 +839,6 @@
                             class="form-control"
                             required
                         >
-
                             <option value="">
                                 Select an opportunity
                             </option>
@@ -1103,7 +856,7 @@
                             </option>
 
                             <option value="Management & Operations">
-                                Management &amp; Operations
+                                Management & Operations
                             </option>
 
                         </select>
@@ -1143,10 +896,7 @@
                     </div>
 
 
-                    <button
-                        type="submit"
-                        class="btn-dark"
-                    >
+                    <button type="submit" class="btn-dark">
                         Submit Employment Application
                     </button>
 
@@ -1155,14 +905,37 @@
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+    <!-- EMPLOYMENT FORM SCRIPT -->
+    <script>
+        document.querySelectorAll('.view-opportunities').forEach(function(link) {
 
+            link.addEventListener('click', function(event) {
+
+                event.preventDefault();
+
+                var form = document.getElementById('employment-form');
+
+                form.classList.remove('hidden');
+
+                setTimeout(function() {
+
+                    form.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                }, 50);
+
+            });
+
+        });
+    </script>
+
+
+    <!-- CONTACT INQUIRY SECTION -->
     <section id="contact" class="py-5 bg-dark">
 
         <div class="container">
@@ -1171,18 +944,15 @@
 
                 <div class="split-col">
 
-                    <h2>
-                        Get In Touch
-                    </h2>
+                    <h2>Get In Touch</h2>
 
                     <div class="title-line"></div>
 
                     <p>
                         Reach out to discover investment openings,
-                        corporate vehicle pricing structures, or
-                        available commercial leasing spaces.
+                        corporate vehicle pricing structures,
+                        or available commercial leasing spaces.
                     </p>
-
 
                     <ul class="contact-list">
 
@@ -1220,7 +990,6 @@
 
                                 <input
                                     type="text"
-                                    name="first_name"
                                     class="form-control"
                                     required
                                 >
@@ -1228,7 +997,7 @@
                             </div>
 
 
-                            <div class="form-col">
+                            <div class="form-group">
 
                                 <label class="form-label">
                                     Last Name
@@ -1236,7 +1005,6 @@
 
                                 <input
                                     type="text"
-                                    name="last_name"
                                     class="form-control"
                                 >
 
@@ -1253,7 +1021,6 @@
 
                             <input
                                 type="email"
-                                name="email"
                                 class="form-control"
                                 required
                             >
@@ -1268,7 +1035,6 @@
                             </label>
 
                             <textarea
-                                name="message"
                                 class="form-control"
                                 rows="5"
                             ></textarea>
@@ -1276,10 +1042,7 @@
                         </div>
 
 
-                        <button
-                            type="submit"
-                            class="btn-light"
-                        >
+                        <button type="submit" class="btn-light">
                             Send Inquiry
                         </button>
 
@@ -1294,10 +1057,7 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
 
         <div class="container">
