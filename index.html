@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Berkshire Group</title>
 
     <style>
@@ -11,7 +10,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -74,15 +73,14 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 15px 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 82px;
         }
 
         .logo-fallback {
@@ -92,7 +90,6 @@
             text-decoration: none;
         }
 
-        /* YOUR EXACT LOGO */
         .logo-fallback img {
             display: block;
             width: auto;
@@ -103,17 +100,15 @@
 
         .nav-menu {
             display: flex;
-            align-items: center;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-link-custom {
             color: #495057;
             font-weight: 600;
             text-decoration: none;
-            font-size: 1.05rem;
-            transition: color 0.2s ease;
+            font-size: 0.95rem;
         }
 
         .nav-link-custom:hover {
@@ -126,50 +121,43 @@
 
         .hero-section {
             background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.55),
-                    rgba(0, 0, 0, 0.55)
-                ),
-                url("images/hero-gallery-1.jpg")
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url('images/hero-gallery-1.jpg')
                 no-repeat center center / cover;
 
-            min-height: 60vh;
-
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
             color: #ffffff;
-
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 15px;
         }
 
         .hero-subtitle {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 25px auto;
         }
 
         .btn-pill {
             display: inline-block;
-            padding: 11px 28px;
+            padding: 10px 25px;
             border: 2px solid #ffffff;
             color: #ffffff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.2s ease;
         }
 
         .btn-pill:hover {
-            background: #ffffff;
+            background-color: #ffffff;
             color: #212529;
         }
 
@@ -179,17 +167,16 @@
 
         .ex-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
 
         .gallery-card {
             position: relative;
-            height: 240px;
+            height: 220px;
             background-color: #495057;
             background-position: center;
             background-size: cover;
-            background-repeat: no-repeat;
             border-radius: 6px;
             display: flex;
             align-items: flex-end;
@@ -202,15 +189,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-
-            background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.1),
-                    rgba(0, 0, 0, 0.85)
-                );
-
+            background: linear-gradient(
+                rgba(0,0,0,0.1),
+                rgba(0,0,0,0.85)
+            );
             padding: 20px;
-
             display: flex;
             align-items: flex-end;
         }
@@ -222,42 +205,21 @@
         }
 
         /* =========================
-           ABOUT CARDS
+           ABOUT
         ========================= */
 
         .about-card {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-
             padding: 25px 20px;
-
             height: 240px;
-
             background-color: #495057;
-
             border-radius: 6px;
-
             background-position: center;
             background-size: cover;
-            background-repeat: no-repeat;
-
             position: relative;
             overflow: hidden;
-        }
-
-        .about-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.10),
-                    rgba(0, 0, 0, 0.75)
-                );
-
-            z-index: 1;
         }
 
         .about-card-content {
@@ -278,7 +240,7 @@
         }
 
         /* =========================
-           CONTACT
+           SPLIT / CONTACT
         ========================= */
 
         .split-layout {
@@ -302,6 +264,10 @@
             color: #a8aeb4;
         }
 
+        /* =========================
+           FORMS
+        ========================= */
+
         .form-row {
             display: flex;
             gap: 15px;
@@ -315,7 +281,6 @@
 
         .form-group {
             margin-bottom: 15px;
-            flex: 1 1 200px;
         }
 
         .form-label {
@@ -328,13 +293,9 @@
         .form-control {
             width: 100%;
             padding: 10px;
-
             background: transparent;
-
             border: 1px solid #495057;
-
             color: #ffffff;
-
             border-radius: 4px;
         }
 
@@ -346,19 +307,139 @@
         .btn-light {
             background-color: #ffffff;
             color: #212529;
-
             padding: 12px 30px;
-
             border: none;
             border-radius: 50px;
-
             cursor: pointer;
-
             font-weight: 600;
         }
 
         .btn-light:hover {
             background-color: #e9ecef;
+        }
+
+        /* =========================
+           EMPLOYMENT
+        ========================= */
+
+        .employment-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 35px auto;
+        }
+
+        .employment-quote {
+            font-size: 1.35rem;
+            font-style: italic;
+            font-weight: 600;
+            margin: 20px 0 5px 0;
+        }
+
+        .employment-author {
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+
+        .employment-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .employment-tab {
+            display: inline-block;
+            padding: 9px 18px;
+            border: 1px solid #dee2e6;
+            border-radius: 50px;
+            color: #495057;
+            text-decoration: none;
+            font-weight: 600;
+            background: #ffffff;
+        }
+
+        .employment-tab:hover,
+        .employment-tab.active {
+            background: #212529;
+            color: #ffffff;
+            border-color: #212529;
+        }
+
+        .employment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .employment-card {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .employment-card h5 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .employment-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .employment-card a {
+            display: inline-block;
+            color: #212529;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .employment-card a:hover {
+            text-decoration: underline;
+        }
+
+        .employment-form-wrap {
+            max-width: 900px;
+            margin: 45px auto 0 auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 35px;
+        }
+
+        .employment-form-wrap h3 {
+            margin-bottom: 8px;
+        }
+
+        .employment-form-wrap .form-label {
+            color: #495057;
+        }
+
+        .employment-form-wrap .form-control {
+            background: #ffffff;
+            color: #212529;
+            border-color: #ced4da;
+        }
+
+        .employment-form-wrap select.form-control {
+            appearance: auto;
+        }
+
+        .employment-form-wrap .btn-dark {
+            background: #212529;
+            color: #ffffff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .employment-form-wrap .btn-dark:hover {
+            background: #000000;
         }
 
         /* =========================
@@ -372,59 +453,39 @@
             text-align: center;
         }
 
-        /* =========================
-           TABLET
-        ========================= */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            margin-bottom: 15px;
+        }
 
-        @media (max-width: 900px) {
-
-            .ex-gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-menu {
-                gap: 18px;
-            }
-
-            .nav-link-custom {
-                font-size: 0.95rem;
-            }
+        .footer-links a {
+            color: #6c757d;
+            text-decoration: none;
         }
 
         /* =========================
            MOBILE
         ========================= */
 
-        @media (max-width: 650px) {
-
-            header.nav-header {
-                padding: 8px 0;
-            }
+        @media (max-width: 768px) {
 
             .nav-container {
                 flex-direction: column;
-                gap: 8px;
-                padding-bottom: 8px;
+                gap: 15px;
             }
 
             .logo-fallback img {
                 height: 60px;
-                max-width: 260px;
+                max-width: 280px;
             }
 
             .nav-menu {
-                width: 100%;
-                justify-content: center;
                 flex-wrap: wrap;
-                gap: 14px;
-            }
-
-            .nav-link-custom {
-                font-size: 0.85rem;
-            }
-
-            .hero-section {
-                min-height: 55vh;
+                justify-content: center;
+                gap: 12px 18px;
             }
 
             .hero-title {
@@ -435,20 +496,8 @@
                 font-size: 1rem;
             }
 
-            .ex-gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-card {
-                height: 240px;
-            }
-
-            .about-card {
-                height: 240px;
-            }
-
-            .split-col {
-                min-width: 100%;
+            .employment-form-wrap {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -457,79 +506,59 @@
 <body>
 
     <!-- =========================
-         NAVIGATION
+         STICKY NAVIGATION BAR
     ========================== -->
 
     <header class="nav-header">
-
         <div class="container nav-container">
 
             <a href="#" class="logo-fallback">
-
-                <!-- EXACT BERKSHIRE GROUP LOGO -->
                 <img
                     src="images/logo-dark.png"
-                    alt="Berkshire Group Logo"
-                    onerror="
-                        this.style.display='none';
-                        this.nextElementSibling.style.display='inline';
-                    "
+                    alt="Berkshire Group"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
                 >
-
                 <span
-                    style="
-                        display:none;
-                        font-size:1.25rem;
-                        font-weight:700;
-                    "
+                    id="brand-text"
+                    style="display:none; font-size:1.25rem; font-weight:700;"
                 >
                     Berkshire Group
                 </span>
-
             </a>
 
             <ul class="nav-menu">
-
                 <li>
-                    <a
-                        class="nav-link-custom"
-                        href="#automotive"
-                    >
+                    <a class="nav-link-custom" href="#automotive">
                         Automotive
                     </a>
                 </li>
 
                 <li>
-                    <a
-                        class="nav-link-custom"
-                        href="#real-estate"
-                    >
+                    <a class="nav-link-custom" href="#real-estate">
                         Real Estate
                     </a>
                 </li>
 
                 <li>
-                    <a
-                        class="nav-link-custom"
-                        href="#about-us"
-                    >
+                    <a class="nav-link-custom" href="#about-us">
                         About Us
                     </a>
                 </li>
 
                 <li>
-                    <a
-                        class="nav-link-custom"
-                        href="#contact"
-                    >
-                        Contact
+                    <a class="nav-link-custom" href="#employment">
+                        Employment
                     </a>
                 </li>
 
+                <li>
+                    <a class="nav-link-custom" href="#contact">
+                        Contact
+                    </a>
+                </li>
             </ul>
 
         </div>
-
     </header>
 
 
@@ -546,14 +575,11 @@
             </h1>
 
             <p class="hero-subtitle">
-                Driving excellence across premium automotive
-                networks and exceptional real estate solutions.
+                Driving excellence across premium automotive networks
+                and exceptional real estate solutions.
             </p>
 
-            <a
-                href="#contact"
-                class="btn-pill"
-            >
+            <a href="#contact" class="btn-pill">
                 Get In Touch
             </a>
 
@@ -563,13 +589,10 @@
 
 
     <!-- =========================
-         AUTOMOTIVE
+         AUTOMOTIVE PORTFOLIO
     ========================== -->
 
-    <section
-        id="automotive"
-        class="py-5 bg-light"
-    >
+    <section id="automotive" class="py-5 bg-light">
 
         <div class="container">
 
@@ -582,8 +605,7 @@
                 <div class="title-line"></div>
 
                 <p class="text-muted">
-                    Explore our premium multi-brand
-                    commercial vehicle ecosystems.
+                    Explore our premium multi-brand commercial vehicle ecosystems.
                 </p>
 
             </div>
@@ -593,77 +615,41 @@
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/hero-gallery-1.jpg');
-                    "
+                    style="background-image: url('images/hero-gallery-1.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Showrooms
-                        </h5>
-
+                        <h5>Showrooms</h5>
                     </div>
-
                 </div>
 
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/hero-gallery-2.jpg');
-                    "
+                    style="background-image: url('images/hero-gallery-2.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Service Centers
-                        </h5>
-
+                        <h5>Service Centers</h5>
                     </div>
-
                 </div>
 
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/hero-gallery-3.jpg');
-                    "
+                    style="background-image: url('images/hero-gallery-3.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Fleet Logistics
-                        </h5>
-
+                        <h5>Fleet Logistics</h5>
                     </div>
-
                 </div>
 
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/hero-gallery-4.jpg');
-                    "
+                    style="background-image: url('images/hero-gallery-4.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Premium Vehicles
-                        </h5>
-
+                        <h5>Premium Vehicles</h5>
                     </div>
-
                 </div>
 
             </div>
@@ -677,10 +663,7 @@
          REAL ESTATE
     ========================== -->
 
-    <section
-        id="real-estate"
-        class="py-5"
-    >
+    <section id="real-estate" class="py-5">
 
         <div class="container">
 
@@ -704,81 +687,42 @@
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/real-estate-1.jpg');
-                    "
+                    style="background-image: url('images/real-estate-1.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Commercial Hubs
-                        </h5>
-
+                        <h5>Commercial Hubs</h5>
                     </div>
-
                 </div>
 
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/real-estate-2.jpg');
-                    "
+                    style="background-image: url('images/real-estate-2.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Residential Spaces
-                        </h5>
-
+                        <h5>Residential Spaces</h5>
                     </div>
-
                 </div>
 
 
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/real-estate-3.jpg');
-                    "
+                    style="background-image: url('images/real-estate-3.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Property Management
-                        </h5>
-
+                        <h5>Property Management</h5>
                     </div>
-
                 </div>
 
 
-                <!-- FALLBACK BECAUSE REAL-ESTATE-4.JPG
-                     WAS NOT IN YOUR IMAGES FOLDER -->
-
+                <!-- Uses an image that actually exists in the images folder -->
                 <div
                     class="gallery-card"
-                    style="
-                        background-image:
-                        url('images/real-estate-4.jpg'),
-                        url('images/real-estate-3.jpg');
-                    "
+                    style="background-image: url('images/real-estate-3.jpg');"
                 >
-
                     <div class="card-overlay">
-
-                        <h5>
-                            Development Strategy
-                        </h5>
-
+                        <h5>Development Strategy</h5>
                     </div>
-
                 </div>
 
             </div>
@@ -789,13 +733,10 @@
 
 
     <!-- =========================
-         ABOUT US
+         ABOUT
     ========================== -->
 
-    <section
-        id="about-us"
-        class="py-5 bg-light"
-    >
+    <section id="about-us" class="py-5 bg-light">
 
         <div class="container">
 
@@ -808,8 +749,7 @@
                 <div class="title-line"></div>
 
                 <p class="text-muted">
-                    Our core foundational pillars guiding
-                    cross-industry excellence.
+                    Our core foundational pillars guiding cross-industry excellence.
                 </p>
 
             </div>
@@ -817,18 +757,15 @@
 
             <div class="ex-gallery-grid">
 
-
-                <!-- ABOUT 1 -->
-
                 <div
                     class="about-card"
                     style="
                         background-image:
                         url('images/imagesabout1.jpg'),
                         url('images/real-estate-1.jpg');
+                        background-repeat: no-repeat;
                     "
                 >
-
                     <div class="about-card-content">
 
                         <h5>
@@ -836,16 +773,13 @@
                         </h5>
 
                         <p>
-                            Setting the modern benchmark for
-                            premium asset management and partnerships.
+                            Setting the modern benchmark for premium
+                            asset management and partnerships.
                         </p>
 
                     </div>
-
                 </div>
 
-
-                <!-- ABOUT 2 -->
 
                 <div
                     class="about-card"
@@ -853,9 +787,9 @@
                         background-image:
                         url('images/imagesabout2.jpg'),
                         url('images/real-estate-2.jpg');
+                        background-repeat: no-repeat;
                     "
                 >
-
                     <div class="about-card-content">
 
                         <h5>
@@ -868,11 +802,8 @@
                         </p>
 
                     </div>
-
                 </div>
 
-
-                <!-- ABOUT 3 -->
 
                 <div
                     class="about-card"
@@ -880,9 +811,9 @@
                         background-image:
                         url('images/imagesabout3.jpg'),
                         url('images/real-estate-3.jpg');
+                        background-repeat: no-repeat;
                     "
                 >
-
                     <div class="about-card-content">
 
                         <h5>
@@ -890,13 +821,336 @@
                         </h5>
 
                         <p>
-                            Delivering consistent engineering,
-                            support, and infrastructure management pipelines.
+                            Delivering consistent engineering, support,
+                            and infrastructure management pipelines.
                         </p>
 
                     </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EMPLOYMENT
+    ========================== -->
+
+    <section id="employment" class="py-5">
+
+        <div class="container">
+
+            <div class="employment-intro">
+
+                <h2>
+                    Career Opportunities
+                </h2>
+
+                <div class="title-line"></div>
+
+                <p class="employment-quote">
+                    “The Guy/Gal with the Best Team Wins!”
+                </p>
+
+                <p class="employment-author">
+                    — Berkshire Group Leadership
+                </p>
+
+                <p class="text-muted">
+                    Explore career opportunities across Berkshire Group's
+                    automotive, real estate, operations, and corporate teams.
+                </p>
+
+            </div>
+
+
+            <div class="employment-tabs">
+
+                <a
+                    class="employment-tab active"
+                    href="#employment"
+                >
+                    All
+                </a>
+
+                <a
+                    class="employment-tab"
+                    href="#employment"
+                >
+                    Automotive
+                </a>
+
+                <a
+                    class="employment-tab"
+                    href="#employment"
+                >
+                    Real Estate
+                </a>
+
+                <a
+                    class="employment-tab"
+                    href="#employment"
+                >
+                    Corporate
+                </a>
+
+                <a
+                    class="employment-tab"
+                    href="#employment"
+                >
+                    Operations
+                </a>
+
+            </div>
+
+
+            <div class="employment-grid">
+
+                <div class="employment-card">
+
+                    <h5>
+                        Automotive Dealerships
+                    </h5>
+
+                    <p>
+                        Sales, service, management, parts,
+                        and dealership operations opportunities.
+                    </p>
+
+                    <a href="#employment-form">
+                        View Opportunities →
+                    </a>
 
                 </div>
+
+
+                <div class="employment-card">
+
+                    <h5>
+                        Real Estate
+                    </h5>
+
+                    <p>
+                        Property management, leasing, development,
+                        maintenance, and real estate operations.
+                    </p>
+
+                    <a href="#employment-form">
+                        View Opportunities →
+                    </a>
+
+                </div>
+
+
+                <div class="employment-card">
+
+                    <h5>
+                        Corporate Team
+                    </h5>
+
+                    <p>
+                        Finance, administration, human resources,
+                        marketing, and business support roles.
+                    </p>
+
+                    <a href="#employment-form">
+                        View Opportunities →
+                    </a>
+
+                </div>
+
+
+                <div class="employment-card">
+
+                    <h5>
+                        Management &amp; Operations
+                    </h5>
+
+                    <p>
+                        Leadership and operational positions supporting
+                        Berkshire Group's growing portfolio.
+                    </p>
+
+                    <a href="#employment-form">
+                        View Opportunities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMPLOYMENT APPLICATION FORM -->
+
+            <div
+                class="employment-form-wrap"
+                id="employment-form"
+            >
+
+                <h3>
+                    Employment Application
+                </h3>
+
+                <p class="text-muted">
+                    Select the area you are interested in and tell us
+                    about yourself. Our team can review your application
+                    and contact you about suitable opportunities.
+                </p>
+
+
+                <form action="#" method="POST">
+
+                    <div class="form-row">
+
+                        <div class="form-col">
+
+                            <label class="form-label">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="first_name"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-col">
+
+                            <label class="form-label">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="last_name"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-col">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-col">
+
+                            <label class="form-label">
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                                class="form-control"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Employment Opportunity
+                        </label>
+
+                        <select
+                            name="employment_category"
+                            class="form-control"
+                            required
+                        >
+
+                            <option value="">
+                                Select an opportunity
+                            </option>
+
+                            <option value="Automotive Dealerships">
+                                Automotive Dealerships
+                            </option>
+
+                            <option value="Real Estate">
+                                Real Estate
+                            </option>
+
+                            <option value="Corporate Team">
+                                Corporate Team
+                            </option>
+
+                            <option value="Management & Operations">
+                                Management &amp; Operations
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Position / Role of Interest
+                        </label>
+
+                        <input
+                            type="text"
+                            name="position"
+                            class="form-control"
+                            placeholder="e.g. Sales Manager, Property Manager, Accountant"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Tell Us About Yourself
+                        </label>
+
+                        <textarea
+                            name="message"
+                            class="form-control"
+                            rows="6"
+                            placeholder="Briefly describe your experience, skills, and the opportunity you are seeking."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-dark"
+                    >
+                        Submit Employment Application
+                    </button>
+
+                </form>
 
             </div>
 
@@ -909,17 +1163,11 @@
          CONTACT
     ========================== -->
 
-    <section
-        id="contact"
-        class="py-5 bg-dark"
-    >
+    <section id="contact" class="py-5 bg-dark">
 
         <div class="container">
 
             <div class="split-layout">
-
-
-                <!-- CONTACT INFORMATION -->
 
                 <div class="split-col">
 
@@ -958,14 +1206,9 @@
                 </div>
 
 
-                <!-- CONTACT FORM -->
-
                 <div class="split-col">
 
-                    <form
-                        action="#"
-                        method="POST"
-                    >
+                    <form action="#" method="POST">
 
                         <div class="form-row">
 
@@ -977,6 +1220,7 @@
 
                                 <input
                                     type="text"
+                                    name="first_name"
                                     class="form-control"
                                     required
                                 >
@@ -992,6 +1236,7 @@
 
                                 <input
                                     type="text"
+                                    name="last_name"
                                     class="form-control"
                                 >
 
@@ -1008,6 +1253,7 @@
 
                             <input
                                 type="email"
+                                name="email"
                                 class="form-control"
                                 required
                             >
@@ -1022,6 +1268,7 @@
                             </label>
 
                             <textarea
+                                name="message"
                                 class="form-control"
                                 rows="5"
                             ></textarea>
@@ -1056,8 +1303,7 @@
         <div class="container">
 
             <p>
-                &copy; 2026 Berkshire Group.
-                All rights reserved.
+                &copy; 2026 Berkshire Group. All rights reserved.
             </p>
 
         </div>
