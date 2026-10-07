@@ -676,6 +676,142 @@
             color: #6c757d;
             text-decoration: none;
         }
+    
+        /* MOBILE SCREEN FIT */
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, video, iframe {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .nav-container {
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .nav-menu {
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .split-col {
+            min-width: 0;
+        }
+
+        .form-control {
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            header.nav-header {
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .logo-fallback img {
+                height: 54px;
+                max-width: min(280px, 90vw);
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                gap: 8px 14px;
+            }
+
+            .nav-link-custom {
+                font-size: 0.82rem;
+            }
+
+            .hero-section {
+                min-height: 42vh;
+                padding: 32px 14px;
+                background-attachment: scroll;
+            }
+
+            .hero-title {
+                font-size: clamp(1.7rem, 7vw, 2.5rem);
+                overflow-wrap: anywhere;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .ex-gallery-grid,
+            .employment-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .split-layout {
+                gap: 24px;
+            }
+
+            .split-col {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+            .form-row {
+                width: 100%;
+            }
+
+            .form-col,
+            .form-group {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .employment-tabs {
+                gap: 8px;
+            }
+
+            .employment-tab {
+                padding: 8px 13px;
+                font-size: 0.88rem;
+            }
+
+            .employment-form-wrap {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .employment-paper {
+                width: 100%;
+                overflow-wrap: anywhere;
+            }
+
+            .contact-list li,
+            p,
+            h1, h2, h3, h4, h5, h6 {
+                overflow-wrap: break-word;
+            }
+
+            footer .container {
+                overflow-wrap: anywhere;
+            }
+        }
+
     </style>
 </head>
 <body>
