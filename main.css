@@ -6,7 +6,6 @@ body {
   color: #212529;
 }
 
-/* Structural Components */
 .main-logo {
   max-height: 45px;
   width: auto;
@@ -19,30 +18,37 @@ body {
   border-radius: 2px;
 }
 
-/* Custom Hero Layout block styling */
+/* Hero */
 .hero-section {
   min-height: 65vh;
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('images/hero-properties.jpg') center/cover no-repeat fixed;
 }
 
-/* High Performance Expanding Interactive Gallery Alternative */
+/* Clean, spacious galleries */
 .ex-gallery-grid {
-  display: flex;
-  gap: 12px;
-  min-height: 450px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  min-height: 0;
+  margin-top: 10px;
 }
 
 .gallery-card {
-  flex: 1;
+  min-height: 380px;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-card:hover {
-  flex: 2.5;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.16);
 }
 
 .gallery-card img {
@@ -61,11 +67,40 @@ body {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0) 48%);
   display: flex;
   align-items: flex-end;
-  padding: 20px;
+  padding: 24px;
   color: #fff;
+}
+
+.card-overlay h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* About cards */
+.about-card {
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.about-card-content {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 24px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0));
+  padding-top: 70px;
+}
+
+.about-card-content h5 {
+  margin-bottom: 8px;
 }
 
 /* Real estate scaling interactions */
@@ -89,11 +124,27 @@ option {
   color: #fff;
 }
 
-/* Media optimization controls */
+/* Responsive gallery */
 @media (max-width: 991px) {
   .ex-gallery-grid {
-    flex-direction: column;
-    min-height: auto;
-    height: 600px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .gallery-card,
+  .about-card {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 575px) {
+  .ex-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gallery-card,
+  .about-card {
+    min-height: 300px;
   }
 }
