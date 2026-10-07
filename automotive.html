@@ -956,6 +956,14 @@
 
     </footer>
 <script>
+        document.querySelectorAll(".brand-photos img").forEach(function(photo, index) {
+            photo.addEventListener("error", function() {
+                if (this.dataset.fallbackApplied) return;
+                this.dataset.fallbackApplied = "true";
+                this.src = index % 2 === 0 ? "images/hero-gallery-1.jpg" : "images/hero-gallery-2.jpg";
+            });
+        });
+
         document.querySelectorAll(".brand-card").forEach(function(logo) {
             logo.addEventListener("click", function() {
                 this.closest(".brand-group").classList.toggle("open");
