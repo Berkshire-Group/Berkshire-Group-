@@ -191,36 +191,12 @@
             margin-top: 45px;
         }
 
-        .brand-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .brand-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            padding: 0;
-            box-shadow: none;
-            min-height: 45px;
-        }
-
-        .brand-card:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        .brand-card img {
-            max-width: 100%;
-            max-height: 45px;
-            object-fit: contain;
-        }
-
+        .brand-grid { display: flex; flex-direction: column; gap: 30px; }
+        .brand-group { width: 100%; }
+        .brand-card { display: flex; align-items: center; justify-content: center; min-height: 45px; }
+        .brand-card img { max-width: 100%; max-height: 45px; object-fit: contain; }
+        .brand-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+        .brand-photos img { width: 100%; height: 190px; object-fit: cover; border-radius: 6px; display: block; }
 
 
         /* ABOUT */
@@ -743,21 +719,110 @@
                 </div>
 
                 <div class="brand-grid">
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/acura.jpg" alt="Acura"></div>
+                    <div class="brand-photos">
+                        <img src="https://mpop-prod-primary.s3.amazonaws.com/acura-of-escondido-ca/img/69ab03f68c0d4-c8bbfe02-bf01-4808-81fc-f24df53fa2b3.jpg" alt="Acura vehicle or showroom photo 1">
+                        <img src="https://s8.localdatacdn.com/tx/sugar-land/5139444/original/O43dEk1pfP.jpg" alt="Acura vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/bmw.jpg" alt="BMW"></div>
+                    <div class="brand-photos">
+                        <img src="https://blog.vlan.asia/hs-fs/hubfs/autobavaria-1.jpeg?height=1334&name=autobavaria-1.jpeg&width=2000" alt="BMW vehicle or showroom photo 1">
+                        <img src="https://storage.googleapis.com/ats-public-files.ats.jobcan.jp/job_offer/main_image_file/2258226/BMW%E9%9D%92%E8%91%89%E5%AE%AE%E5%89%8D__3_.jpg" alt="BMW vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/cadillac.jpg" alt="Cadillac"></div>
+                    <div class="brand-photos">
+                        <img src="https://platform.cstatic-images.com/in/v2/dealer_media/13415244-49e6-59fb-8e23-1bd65cb37694/webready_SCH_interior.jpg" alt="Cadillac vehicle or showroom photo 1">
+                        <img src="https://pictures.dealer.com/f/fieldscadillacstaugustine/1374/ebf3651e8f683b78da83c66e59cbf232x.jpg" alt="Cadillac vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/chevy.jpg" alt="Chevrolet"></div>
+                    <div class="brand-photos">
+                        <img src="https://img.p.mapq.st/?q=75&url=https%3A%2F%2Fs3-media0.fl.yelpcdn.com%2Fbphoto%2FCa8WvVXU5GUK4vkqbXNRXg%2Fl.jpg&w=3840" alt="Chevrolet vehicle or showroom photo 1">
+                        <img src="https://di-uploads-pod12.dealerinspire.com/byerschevy/uploads/2024/08/Chevy-Truck-Dealer-Near-Columbus-OH.jpg" alt="Chevrolet vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/chrysler.jpg" alt="Chrysler"></div>
+                    <div class="brand-photos">
+                        <img src="https://vehicle-images.carscommerce.inc/9e75-18003220/2C4RC1BG4TR177854/5a99b7442c57d43cf168d97cdb4ee14a.jpg" alt="Chrysler vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-2.jpg" alt="Chrysler vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/dodge.jpg" alt="Dodge"></div>
+                    <div class="brand-photos">
+                        <img src="https://vehicle-images.carscommerce.inc/70f1-110004565/1C4SDJCT7TC226435/thumbnails/large/e2769c2c3b8a3d4fad58ca2ba02381b7.jpg" alt="Dodge vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-3.jpg" alt="Dodge vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/ford.jpg" alt="Ford"></div>
+                    <div class="brand-photos">
+                        <img src="https://service.secureoffersites.com//images/GetLibraryImage?fileNameOrId=710718" alt="Ford vehicle or showroom photo 1">
+                        <img src="https://s3.localdatacdn.com/ca/huntington-beach/4401165/original/TUnZTDIogP.jpg" alt="Ford vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/gmc.jpg" alt="GMC"></div>
+                    <div class="brand-photos">
+                        <img src="https://s10.localdatacdn.com/mo/cameron/4288539/original/80QvpAbMpI.jpeg" alt="GMC vehicle or showroom photo 1">
+                        <img src="https://static.adxcms.com/images/vehicle_3GTUUBED5TG262190/1024x683/95474d1a9544aaac1d7f2dca015be851.webp" alt="GMC vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/honda.jpg" alt="Honda"></div>
+                    <div class="brand-photos">
+                        <img src="https://www.riccimotors.it/data/pagine/img/58.jpg" alt="Honda vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-4.jpg" alt="Honda vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/jeep.jpg" alt="Jeep"></div>
+                    <div class="brand-photos">
+                        <img src="https://platform.cstatic-images.com/in/v2/dealer_media/570bad47-abeb-500f-a3ca-e4689e496582/Kelly%20Jeep%202024.jpg" alt="Jeep vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-1.jpg" alt="Jeep vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/nissan.jpg" alt="Nissan"></div>
+                    <div class="brand-photos">
+                        <img src="https://cdn-user.dealerrater.com/images/dealer/6201/photos/main-6201-92649b65a48d_large.jpg" alt="Nissan vehicle or showroom photo 1">
+                        <img src="images/imagesabout1.jpg" alt="Nissan vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/ram.jpg" alt="RAM"></div>
+                    <div class="brand-photos">
+                        <img src="https://blob.diariodelyaqui.mx/images/2026/03/07/autos-new-1-987398cf-focus-0-0-1280-720.webp" alt="RAM vehicle or showroom photo 1">
+                        <img src="images/imagesabout2.jpg" alt="RAM vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/subaru.jpg" alt="Subaru"></div>
+                    <div class="brand-photos">
+                        <img src="https://californiacardealers.net/wp-content/uploads/2025/09/AF1QipMynNejmc4_IPDnhR7R_pa_9y_4Al8QtOi9j6Dyw1920-h1080-k-no.jpeg" alt="Subaru vehicle or showroom photo 1">
+                        <img src="images/imagesabout3.jpg" alt="Subaru vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/toyota.jpg" alt="Toyota"></div>
+                    <div class="brand-photos">
+                        <img src="https://storage.googleapis.com/aresstorage/upload/dealer/showroom/3365/637281658704439727.jpg" alt="Toyota vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-2.jpg" alt="Toyota vehicle or showroom photo 2">
+                    </div>
+                </div>
+                <div class="brand-group">
                     <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/vw.jpg" alt="Volkswagen"></div>
+                    <div class="brand-photos">
+                        <img src="https://m.atcdn.co.uk/retailer/media/0adc24aa-621a-44ab-a6fb-9675c0f4118b.jpg" alt="Volkswagen vehicle or showroom photo 1">
+                        <img src="images/hero-gallery-3.jpg" alt="Volkswagen vehicle or showroom photo 2">
+                    </div>
                 </div>
             </div>
 
