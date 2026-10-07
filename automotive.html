@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,6 +184,49 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
+        }
+
+        /* AUTOMOTIVE BRANDS */
+        .brand-section {
+            margin-top: 45px;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(140px, 1fr));
+            gap: 18px;
+        }
+
+        .brand-card {
+            min-height: 130px;
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+        }
+
+        .brand-card img {
+            max-width: 100%;
+            max-height: 75px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 900px) {
+            .brand-grid { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
+        }
+
+        @media (max-width: 600px) {
+            .brand-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
         }
 
         /* ABOUT */
@@ -699,6 +740,32 @@
 
             </div>
 
+
+            <div class="brand-section">
+                <div class="text-center mb-5">
+                    <h3>Automotive Brands</h3>
+                    <div class="title-line"></div>
+                    <p class="text-muted">Our automotive brand portfolio</p>
+                </div>
+
+                <div class="brand-grid">
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/acura.jpg" alt="Acura"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/bmw.jpg" alt="BMW"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/cadillac.jpg" alt="Cadillac"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/chevy.jpg" alt="Chevrolet"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/chrysler.jpg" alt="Chrysler"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/dodge.jpg" alt="Dodge"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/ford.jpg" alt="Ford"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/gmc.jpg" alt="GMC"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/honda.jpg" alt="Honda"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/jeep.jpg" alt="Jeep"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/nissan.jpg" alt="Nissan"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/ram.jpg" alt="RAM"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/subaru.jpg" alt="Subaru"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/toyota.jpg" alt="Toyota"></div>
+                    <div class="brand-card"><img src="https://www.spartan1.com/images/management/brand/vw.jpg" alt="Volkswagen"></div>
+                </div>
+            </div>
 
             <div class="ex-gallery-grid">
 
