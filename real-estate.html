@@ -148,6 +148,44 @@
             font-weight: 600;
         }
 
+
+        /* PROPERTY FILTER */
+        .property-browser {
+            margin: 10px 0 40px;
+            text-align: center;
+        }
+
+        .property-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .property-filter a {
+            display: inline-block;
+            padding: 9px 18px;
+            border: 1px solid #dee2e6;
+            border-radius: 50px;
+            color: #495057;
+            text-decoration: none;
+            font-weight: 600;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .property-filter a:hover,
+        .property-filter a.active {
+            background: #212529;
+            color: #ffffff;
+            border-color: #212529;
+        }
+
+        .gallery-card.property-hidden {
+            display: none;
+        }
+
         /* GALLERIES */
         .ex-gallery-grid {
             display: grid;
@@ -701,10 +739,26 @@
             </div>
 
 
+
+            <div class="property-browser">
+                <h3 style="margin-bottom: 18px;">Browse All Properties</h3>
+
+                <ul class="property-filter" aria-label="Filter properties">
+                    <li><a href="#" class="property-filter-link active" data-filter="all">All</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="office">Office Buildings</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="homes">Homes</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="apartments">Apartments</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="condominium">Condominium</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="land">Land</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="restaurants">Restaurants</a></li>
+                    <li><a href="#" class="property-filter-link" data-filter="commercial">Commercial</a></li>
+                </ul>
+            </div>
+
             <div class="ex-gallery-grid">
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="commercial"
                     style="background-image: url('images/real-estate-1.jpg');"
                 >
                     <div class="card-overlay">
@@ -713,7 +767,7 @@
                 </div>
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="homes apartments condominium"
                     style="background-image: url('images/real-estate-2.jpg');"
                 >
                     <div class="card-overlay">
@@ -722,7 +776,7 @@
                 </div>
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="office commercial"
                     style="background-image: url('images/real-estate-4.jpg');"
                 >
                     <div class="card-overlay">
@@ -731,8 +785,8 @@
                 </div>
 
                 <div
-                    class="gallery-card"
-                    style="background-image: url('images/real-estate-3.jpg');"
+                    class="gallery-card" data-category="land commercial"
+                    style="background-image: url('images/real-estate-4.jpg');"
                 >
                     <div class="card-overlay">
                         <h5>Development Strategy</h5>
@@ -742,7 +796,7 @@
             </div>
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="commercial restaurants"
                     style="background-image: url('images/hero-gallery-2.jpg');"
                 >
                     <div class="card-overlay">
@@ -751,7 +805,7 @@
                 </div>
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="land commercial"
                     style="background-image: url('images/hero-gallery-3.jpg');"
                 >
                     <div class="card-overlay">
@@ -760,7 +814,7 @@
                 </div>
 
                 <div
-                    class="gallery-card"
+                    class="gallery-card" data-category="office commercial"
                     style="background-image: url('images/hero-gallery-4.jpg');"
                 >
                     <div class="card-overlay">
@@ -771,6 +825,28 @@
         </div>
 
     </section>
+
+
+    <script>
+        document.querySelectorAll('.property-filter-link').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const filter = this.dataset.filter;
+
+                document.querySelectorAll('.property-filter-link').forEach(function(item) {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                document.querySelectorAll('.gallery-card[data-category]').forEach(function(card) {
+                    const categories = card.dataset.category.split(' ');
+                    const showCard = filter === 'all' || categories.includes(filter);
+                    card.classList.toggle('property-hidden', !showCard);
+                });
+            });
+        });
+    </script>
 
 <!-- FOOTER -->
     <footer>
