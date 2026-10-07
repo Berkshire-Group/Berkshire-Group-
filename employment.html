@@ -755,6 +755,7 @@
                     <a
                         href="#employment-form"
                         class="view-opportunities"
+                        data-application-section="Automotive Dealerships"
                     >
                         View Opportunities →
                     </a>
@@ -776,6 +777,7 @@
                     <a
                         href="#employment-form"
                         class="view-opportunities"
+                        data-application-section="Real Estate"
                     >
                         View Opportunities →
                     </a>
@@ -797,6 +799,7 @@
                     <a
                         href="#employment-form"
                         class="view-opportunities"
+                        data-application-section="Corporate Team"
                     >
                         View Opportunities →
                     </a>
@@ -818,6 +821,7 @@
                     <a
                         href="#employment-form"
                         class="view-opportunities"
+                        data-application-section="Management & Operations"
                     >
                         View Opportunities →
                     </a>
@@ -859,6 +863,10 @@
 
 
                 <div class="employment-paper">
+
+                    <div id="application-source" style="background:#f1f3f5;border-bottom:1px solid #222;padding:10px;text-align:center;font-weight:700;">
+                        Applying Through: <span id="application-source-name">Please select an opportunity above</span>
+                    </div>
 
                     <div class="employment-form-title">
                         Please complete all information requested
@@ -1151,6 +1159,11 @@
                                         type="text"
                                         name="position_applied_for"
                                         required
+                                    >
+                                    <input
+                                        type="hidden"
+                                        name="application_section"
+                                        id="application-section"
                                     >
 
                                 </div>
@@ -1673,6 +1686,14 @@
 
                     var form =
                         document.getElementById('employment-form');
+
+                    var section =
+                        link.getAttribute('data-application-section') || '';
+
+                    document.getElementById('application-source-name').textContent =
+                        section || 'Selected Opportunity';
+
+                    document.getElementById('application-section').value = section;
 
                     form.classList.remove('hidden');
 
