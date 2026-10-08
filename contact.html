@@ -994,5 +994,22 @@ img, video, iframe, input, textarea, select, button { max-width:100%; box-sizing
 
     </footer>
 
-<!-- TraceMyIP visitor tracking --></body>
+<script>
+(function () {
+  var relayUrl = "https://berkshire-group-visitor-relay.lindawyatt061.workers.dev/";
+  var key = "berkshireVisitorNotified";
+  if (sessionStorage.getItem(key)) return;
+  fetch(relayUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      body: "A visitor opened the Berkshire Group website.",
+      url: window.location.href
+    })
+  }).then(function (response) {
+    if (response.ok) sessionStorage.setItem(key, "1");
+  }).catch(function () {});
+})();
+</script>
+</body>
 </html>
