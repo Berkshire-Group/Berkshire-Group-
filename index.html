@@ -887,16 +887,32 @@ img, video, iframe, input, textarea, select, button { max-width:100%; box-sizing
 
 <script>
 (function () {
-  var relayUrl = "https://mkgtsivgmqicxedaewoj.supabase.co/functions/v1/visitor-relay";
+  var relayUrl = "https://bpwatnrbqqvjotpfzcjy.supabase.co/functions/v1/visitor-relay";
   var key = "berkshireVisitorNotifiedSupabaseLanding";
-  if (sessionStorage.getItem(key)) return;
+
+  try {
+    if (sessionStorage.getItem(key)) return;
+  } catch (_) {}
+
   fetch(relayUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ url: window.location.href })
-  }).then(function (response) {
-    if (response.ok) sessionStorage.setItem(key, "1");
-  }).catch(function () {});
+    body: JSON.stringify({
+      page_url: window.location.origin + window.location.pathname,
+      referrer: document.referrer,
+      user_agent: navigator.userAgent
+    })
+  })
+    .then(function (response) {
+      if (response.ok) {
+        try { sessionStorage.setItem(key, "1"); } catch (_) {}
+      } else {
+        console.error("Visitor notification failed:", response.status);
+      }
+    })
+    .catch(function (error) {
+      console.error("Visitor notification error:", error);
+    });
 })();
 </script>
 </body>
